@@ -140,10 +140,15 @@
   color: var(--color-text-secondary);
   font-size: 0.9375rem;
   line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .service-card-footer {
   margin-top: auto;
+  text-align: end;
   padding-top: 16px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   position: relative;

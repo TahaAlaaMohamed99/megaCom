@@ -1769,7 +1769,9 @@ ul.list--default a,
   color: var(--color-primary, #0056b3);
   text-decoration: none;
   font-weight: var(--font-weight-semibold, 600);
+  transition: color 150ms ease, -webkit-text-decoration 150ms ease;
   transition: color 150ms ease, text-decoration 150ms ease;
+  transition: color 150ms ease, text-decoration 150ms ease, -webkit-text-decoration 150ms ease;
 }
 
 ul.list--default a:hover,
@@ -2510,10 +2512,15 @@ ul.list--default a:hover,
   color: var(--color-text-secondary);
   font-size: 0.9375rem;
   line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .service-card-footer {
   margin-top: auto;
+  text-align: end;
   padding-top: 16px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   position: relative;
@@ -2574,7 +2581,6 @@ ul.list--default a:hover,
   margin: 2.5rem 0;
   width: 100%;
 }
-
 @media (max-width: 768px) {
   .cards-container {
     grid-template-columns: 1fr;
