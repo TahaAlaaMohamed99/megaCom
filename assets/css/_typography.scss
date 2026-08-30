@@ -1,0 +1,75 @@
+// Megacom Design System — Typography
+// System font. No custom typeface.
+
+:root {
+  --font-family: System, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --font-size-display: 36px;
+  --font-size-xxxl: 30px;
+  --font-size-xxl: 24px;
+  --font-size-xl: 20px;
+  --font-size-lg: 17px;
+  --font-size-md: 15px;
+  --font-size-sm: 13px;
+  --font-size-xs: 11px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-display: 1.4;
+  --line-height-xxxl: 1.4;
+  --line-height-xxl: 1.4;
+  --line-height-xl: 1.4;
+  --line-height-lg: 1.4;
+  --line-height-md: 1.4;
+  --line-height-sm: 1.4;
+  --line-height-xs: 1.4;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-xxxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xxxl);
+}
+
+.title--section {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.title--card {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.title--large {
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-bold);
+}
+
+.des {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+}
+
+.des--small {
+  font-size: var(--font-size-sm);
+}
+
+.des--muted {
+  color: var(--color-text-muted);
+}
+
+.des--emphasis {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}

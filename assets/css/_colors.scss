@@ -1,0 +1,45 @@
+// Megacom Design System — Colors
+// Source: Megacom Design System
+// Brand, surface, text, border and semantic tokens.
+
+:root {
+  --color-primary: #2A3B99;
+  --color-primary-dark: #182463;
+  --color-primary-light: #E4E8F8;
+  --color-secondary: #5B6168;
+
+  --color-background: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-card: #FFFFFF;
+
+  --color-text-primary: #1A1D24;
+  --color-text-secondary: #5C6270;
+  --color-text-muted: #9AA0AC;
+  --color-text-on-primary: #FFFFFF;
+
+  --color-border: #D6D9E0;
+  --color-divider: #EEF0F4;
+
+  --color-success: #1E9E6B;
+  --color-success-bg: #E4F7EF;
+  --color-warning: #E0A431;
+  --color-warning-bg: #FDF3E1;
+  --color-error: #D9463F;
+  --color-error-bg: #FBEAE9;
+  --color-info: #2A6FDB;
+  --color-info-bg: #E7F0FE;
+
+  --color-overlay: rgba(11, 18, 48, 0.55);
+  --color-shadow: #182463;
+}
+
+[data-theme="dark"] {
+  --color-background: #0B1230;
+  --color-surface: #111A45;
+  --color-card: #182463;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #5C6270;
+  --color-text-muted: #9AA0AC;
+  --color-text-on-primary: #FFFFFF;
+}
