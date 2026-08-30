@@ -1253,7 +1253,7 @@ ul.list--default li::marker {
 
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: min(100% - var(--space-md) * 2, 1240px);
   margin: 0 auto;
 }
 
