@@ -1,15 +1,210 @@
-<header class="site-header">
-  <nav class="navbar">
+<header class="site-header" id="siteHeader">
+  <nav class="navbar" aria-label="Main Navigation">
     <a class="logo" href="/">MegaCom</a>
-    <ul class="nav-links">
-      <li><a href="/about-us/">About Us</a></li>
-      <li><a href="/government/">Government</a></li>
-      <li><a href="/private-sector/">Private Sector</a></li>
-      <li><a href="/methodology/">Methodology</a></li>
-      <li><a href="/success-stories/">Success Stories</a></li>
-      <li><a href="/reference/">Reference</a></li>
-      <li><a href="/jobs/">Jobs</a></li>
-      <li><a href="/contact-us/">Contact Us</a></li>
-    </ul>
+
+    <!-- Mobile Hamburger Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+      <span class="hamburger-icon">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </span>
+    </button>
+
+    <!-- Mobile Backdrop Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Navigation Container -->
+    <div class="nav-wrapper" id="primaryNav">
+      <ul class="nav-links menu">
+        <!-- Home -->
+        <li class="menu-item">
+          <a href="/">Home</a>
+        </li>
+
+        <!-- About Us -->
+        <li class="menu-item menu-item-has-children">
+          <div class="menu-item-row">
+            <a href="/about-us/">About Us</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle About Us submenu">
+              <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="/about-us/company-brief/">Company Brief</a></li>
+            <li class="menu-item"><a href="/about-us/our-team/">Our Team</a></li>
+            <li class="menu-item"><a href="/about-us/our-clint/">Our Clients</a></li>
+            <li class="menu-item"><a href="/privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </li>
+
+        <!-- Our Service -->
+        <li class="menu-item menu-item-has-children">
+          <div class="menu-item-row">
+            <a href="/our-service/">Our Service</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Our Service submenu">
+              <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <ul class="sub-menu">
+            <!-- Government -->
+            <li class="menu-item menu-item-has-children">
+              <div class="menu-item-row">
+                <a href="/government/">Government</a>
+                <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Government submenu">
+                  <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-has-children">
+                  <div class="menu-item-row">
+                    <a href="/government/consultation/">Consultation</a>
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Consultation submenu">
+                      <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="/government/consultation/national-studies/">National Studies</a></li>
+                    <li class="menu-item"><a href="/government/consultation/institutional-development-and-capacity-building/">Institutional Development and Capacity Building</a></li>
+                    <li class="menu-item"><a href="/government/consultation/business-process-mapping/">Business Process Mapping</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <div class="menu-item-row">
+                    <a href="/government/sw-services/">SW Services</a>
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle SW Services submenu">
+                      <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="/government/sw-services/megahr-enterprise/">MegaHR Enterprise</a></li>
+                    <li class="menu-item"><a href="/government/sw-services/egrp-v2-0/">EGRP v2.0</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item"><a href="/government/governmental-entities-and-ngos-relevant-references/">Governmental Entities and NGOs Relevant References</a></li>
+              </ul>
+            </li>
+
+            <!-- Private Sector -->
+            <li class="menu-item menu-item-has-children">
+              <div class="menu-item-row">
+                <a href="/private-sector/">Private Sector</a>
+                <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Private Sector submenu">
+                  <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-has-children">
+                  <div class="menu-item-row">
+                    <a href="/private-sector/business-consultation/">Business Consultation</a>
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Business Consultation submenu">
+                      <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="menu-item menu-item-has-children">
+                      <div class="menu-item-row">
+                        <a href="/private-sector/business-consultation/business-management/">Business Management</a>
+                        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Business Management submenu">
+                          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                      </div>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="/private-sector/business-consultation/business-management/strategic-planning/">Strategic Planning</a></li>
+                        <li class="menu-item"><a href="/private-sector/business-consultation/business-management/monitoring-and-evaluation-me-systems/">Monitoring and Evaluation (M&amp;E) Systems</a></li>
+                        <li class="menu-item"><a href="/private-sector/business-consultation/business-management/balanced-scoreboards/">Balanced Scoreboards</a></li>
+                        <li class="menu-item"><a href="/private-sector/business-consultation/business-management/marketing-and-export-systems/">Marketing and Export Systems</a></li>
+                        <li class="menu-item"><a href="/private-sector/business-consultation/business-management/business-management-relevant-references/">Business Management Relevant References</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                      <div class="menu-item-row">
+                        <a href="/private-sector/business-consultation/human-capital/">Human Capital</a>
+                        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Human Capital submenu">
+                          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                      </div>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="/private-sector/business-consultation/human-capital/organizational-developmentod/">Organizational Development (OD)</a></li>
+                        <li class="menu-item"><a href="/private-sector/business-consultation/human-capital/human-resources-management/">Human Resources Management</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                      <div class="menu-item-row">
+                        <a href="/private-sector/business-consultation/lean-manufacturing-and-quality-management/">Lean Manufacturing and Quality Management</a>
+                        <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Quality Management submenu">
+                          <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                      </div>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="/private-sector/business-consultation/lean-manufacturing-and-quality-management/production-optimization/">Production Optimization</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <div class="menu-item-row">
+                    <a href="/private-sector/it-consultation/">IT Consultation</a>
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle IT Consultation submenu">
+                      <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="https://megahr-next.netlify.app/" target="_blank" rel="noopener noreferrer">MegaHR NEXT</a></li>
+                    <li class="menu-item"><a href="/private-sector/it-consultation/it-consultation-relevant-references/">IT Consultation Relevant References</a></li>
+                    <li class="menu-item"><a href="/private-sector/it-consultation/it-consultation-details/">IT Consultation Details</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Methodology -->
+        <li class="menu-item menu-item-has-children">
+          <div class="menu-item-row">
+            <a href="/methodology/">Methodology</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-label="Toggle Methodology submenu">
+              <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="/methodology/basic-features/">Basic Features</a></li>
+            <li class="menu-item"><a href="/methodology/arii/">ARII</a></li>
+            <li class="menu-item"><a href="/methodology/idm/">IDM</a></li>
+          </ul>
+        </li>
+
+        <!-- Remaining Top-level Links -->
+        <li class="menu-item"><a href="/success-stories/">Success Stories</a></li>
+        <li class="menu-item"><a href="/reference/">Reference</a></li>
+        <li class="menu-item"><a href="/jobs/">Careers</a></li>
+        <li class="menu-item"><a href="/contact-us/">Contact US</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
