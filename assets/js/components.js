@@ -355,3 +355,46 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadComponent("#footer", "/components/footer.html");
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const heroSlider = document.querySelector(".hero-slider");
+
+  if (!heroSlider) return;
+
+  new Swiper(heroSlider, {
+    loop: true,
+
+    speed: 900,
+
+    effect: "fade",
+
+    fadeEffect: {
+      crossFade: true,
+    },
+
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    navigation: {
+      nextEl: ".hero-slider-next",
+      prevEl: ".hero-slider-prev",
+    },
+
+    pagination: {
+      el: ".hero-slider-dots",
+      clickable: true,
+    },
+
+    keyboard: {
+      enabled: true,
+    },
+
+    a11y: {
+      enabled: true,
+    },
+
+    grabCursor: true,
+  });
+});
