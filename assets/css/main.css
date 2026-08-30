@@ -58,6 +58,12 @@
   --line-height-sm: 1.4;
   --line-height-xs: 1.4;
 }
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+}
 
 .title {
   margin: 0;
@@ -180,7 +186,7 @@
 /* Semantic list */
 ul.list--default,
 .list--default {
-  padding-left: var(--space-lg);
+  padding-left: var(--space-md);
   list-style: disc;
 }
 
@@ -325,7 +331,7 @@ ul.list--default li::marker {
 
 .section__title {
   margin-bottom: var(--space-sm);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 .section__des {
