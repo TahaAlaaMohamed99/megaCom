@@ -11,10 +11,22 @@ async function loadComponent(selector, path) {
   const element = document.querySelector(selector);
   if (!element) return false;
 
+  const cacheKey = `mc_comp_${path}`;
+  const cachedHTML = sessionStorage.getItem(cacheKey);
+
+  if (cachedHTML) {
+    element.innerHTML = cachedHTML;
+    return true;
+  }
+
   try {
     const response = await fetch(path);
     if (!response.ok) throw new Error(`Failed to load ${path}`);
-    element.innerHTML = await response.text();
+    const html = await response.text();
+    element.innerHTML = html;
+    try {
+      sessionStorage.setItem(cacheKey, html);
+    } catch (e) {}
     return true;
   } catch (error) {
     console.error(`[MegaCom] Error loading component ${path}:`, error);
