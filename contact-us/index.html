@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | MegaCom</title>
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
+
 <body>
   <div id="navbar"></div>
 
@@ -24,9 +26,124 @@
 
     <div class="container">
       <section class="section">
-        <p class="des">
-          Get in touch with us. For inquiries, email us at <a href="mailto:info@megacom-int.com">info@megacom-int.com</a>.
+        <p class="des page-header__description">
+          Have a question or looking to start a new strategic project? Connect with Megacom’s expert advisors today. We are here to help drive your enterprise or governmental growth.
         </p>
+
+        <div class="contact-section-grid">
+          <!-- Left Column: Contact Information Cards -->
+          <div class="contact-info-panel">
+            <div class="contact-info-card">
+              <div class="contact-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info-body">
+                <h4>Email Us Directly</h4>
+                <p>For inquiries, partnerships, and RFPs:</p>
+                <a href="mailto:info@megacom-int.com">info@megacom-int.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-info-body">
+                <h4>Headquarters</h4>
+                <p>Cairo, Egypt</p>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Serving clients across the MENA region</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info-body">
+                <h4>Working Hours</h4>
+                <p>Sunday – Thursday: 9:00 AM – 5:00 PM (EET)</p>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Friday & Saturday: Closed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Form Card -->
+          <div class="contact-form-card">
+            <div class="contact-form-header">
+              <h3>Send Us a Message</h3>
+              <p>Fill out the form below and our consulting team will respond within 24 hours.</p>
+            </div>
+
+            <form id="contact-form" autocomplete="on" novalidate>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="fullName">Full Name *</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="name@company.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+20 100 000 0000" />
+                </div>
+
+                <div class="form-group">
+                  <label for="company">Company / Organization</label>
+                  <input type="text" id="company" name="company" placeholder="e.g. Acme Enterprise" />
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="service">Interested Service</label>
+                  <select id="service" name="service">
+                    <option value="" disabled selected>Select a Service Area</option>
+                    <option value="Business Consultation">Business Management & Consultation</option>
+                    <option value="IT Consultation">IT Consultation & Automation</option>
+                    <option value="Governmental Services">Governmental Services & EGRP</option>
+                    <option value="Human Capital">Human Capital & OD</option>
+                    <option value="Lean Manufacturing">Lean Manufacturing & Quality</option>
+                    <option value="General Inquiry">Other Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" placeholder="How can Megacom assist your organization?" required></textarea>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <button type="submit" id="submit-btn" class="form-submit-btn">
+                  Send Message
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Alert Feedbacks for API Response -->
+              <div id="form-success" class="alert-message alert-success">
+                ✓ Thank you! Your message has been sent successfully. Our team will contact you shortly.
+              </div>
+              <div id="form-error" class="alert-message alert-error">
+                ✕ Something went wrong. Please check your inputs or try emailing us directly at info@megacom-int.com.
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
     </div>
   </main>
@@ -34,5 +151,83 @@
   <div id="footer"></div>
 
   <script src="/assets/js/components.js"></script>
+
+  <!-- Contact Form API Handler JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contact-form');
+      const successAlert = document.getElementById('form-success');
+      const errorAlert = document.getElementById('form-error');
+      const submitBtn = document.getElementById('submit-btn');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Simple Form Validation
+          const fullName = document.getElementById('fullName').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+
+          if (!fullName || !email || !message) {
+            errorAlert.innerText = 'Please fill out all required fields (*).';
+            errorAlert.style.display = 'block';
+            successAlert.style.display = 'none';
+            return;
+          }
+
+          // Gather form data as JSON payload
+          const formData = new FormData(contactForm);
+          const payload = Object.fromEntries(formData.entries());
+
+          // Show Loading state on button
+          submitBtn.disabled = true;
+          const originalBtnHTML = submitBtn.innerHTML;
+          submitBtn.innerHTML = `Sending...`;
+          
+          successAlert.style.display = 'none';
+          errorAlert.style.display = 'none';
+
+          try {
+            /**
+             * BACKEND API INTEGRATION POINT:
+             * Tomorrow, update API_ENDPOINT with the real backend API URL.
+             */
+            const API_ENDPOINT = '/api/contact'; // Replace with real URL tomorrow
+
+            /*
+            const response = await fetch(API_ENDPOINT, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+              throw new Error('Failed to submit form');
+            }
+            */
+
+            // Temporary simulation until API endpoint URL is provided tomorrow
+            await new Promise((resolve) => setTimeout(resolve, 800));
+
+            // Show Success Notification
+            successAlert.style.display = 'block';
+            contactForm.reset();
+          } catch (err) {
+            console.error('Contact Form Error:', err);
+            errorAlert.innerText = 'Unable to send message right now. Please try again later or email info@megacom-int.com.';
+            errorAlert.style.display = 'block';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
