@@ -52,6 +52,29 @@ function initNavbar() {
   const closeTimers = new Map();
 
   // ------------------------------------------------------------
+  // Sticky Scroll Header Controller (adds is-sticky & is-scrolled)
+  // ------------------------------------------------------------
+  function initHeaderScroll() {
+    const siteHeader = document.querySelector("#siteHeader") || document.querySelector(".site-header");
+    if (!siteHeader) return;
+
+    const scrollThreshold = 140;
+
+    function updateStickyHeader() {
+      if (window.scrollY > scrollThreshold) {
+        siteHeader.classList.add("is-sticky", "is-scrolled");
+      } else {
+        siteHeader.classList.remove("is-sticky", "is-scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", updateStickyHeader, { passive: true });
+    updateStickyHeader();
+  }
+
+  initHeaderScroll();
+
+  // ------------------------------------------------------------
   // 1. Highlight Current Active Route & Parent Ancestors
   // ------------------------------------------------------------
   function highlightActiveRoutes() {

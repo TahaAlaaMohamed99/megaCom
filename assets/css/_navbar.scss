@@ -25,11 +25,37 @@ body.nav-scroll-locked {
 }
 
 .site-header {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
   padding-block: var(--space-md);
   width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+
+  &.is-sticky,
+  &.is-scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-block: var(--space-sm);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    animation: slideDownHeader 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes slideDownHeader {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .navbar {
