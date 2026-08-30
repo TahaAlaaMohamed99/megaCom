@@ -1,0 +1,11 @@
+# Netlify Redirects for MegaCom Multi-Page Site
+
+/private-sector    /private-sector/    301
+/government        /government/        301
+/our-service        /our-service/        301
+/about-us          /about-us/          301
+/contact-us        /contact-us/        301
+/jobs              /jobs/              301
+/methodology        /methodology/        301
+/success-stories   /success-stories/   301
+/privacy-policy    /privacy-policy/    301
