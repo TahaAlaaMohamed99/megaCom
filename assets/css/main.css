@@ -57,12 +57,6 @@
   --line-height-sm: 1.4;
   --line-height-xs: 1.4;
 }
-body {
-  margin: 0;
-  font-family: var(--font-family);
-  color: var(--color-text-primary);
-  background: var(--color-background);
-}
 
 .title {
   margin: 0;
@@ -450,6 +444,7 @@ body.nav-scroll-locked {
 .sub-menu.active .menu-item-row > a {
   color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
+  background-color: var(--color-primary-light);
 }
 
 @media (min-width: 1025px) and (max-width: 1240px) {
@@ -738,7 +733,7 @@ body.nav-scroll-locked {
 /* Semantic list */
 ul.list--default,
 .list--default {
-  padding-left: var(--space-md);
+  padding-left: var(--space-lg);
   list-style: disc;
 }
 
@@ -880,7 +875,7 @@ ul.list--default li::marker {
 
 .section__title {
   margin-bottom: var(--space-sm);
-  color: var(--color-text-primary);
+  color: var(--color-primary);
 }
 
 .section__des {
