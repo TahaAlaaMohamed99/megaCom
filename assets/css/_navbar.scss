@@ -812,6 +812,10 @@ body.nav-scroll-locked {
   }
 }
 
+.mobile-nav-header {
+  display: none !important;
+}
+
 // Active State for Mega Menu
 @media (min-width: 1025px) {
 
@@ -880,27 +884,32 @@ body.nav-scroll-locked {
   }
 
   .mobile-nav-footer {
-    display: block;
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid var(--color-border);
+    display: block !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+    padding-top: 16px !important;
+    border-top: 1px solid var(--color-border) !important;
+    flex-shrink: 0 !important;
   }
 
   .mobile-nav-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    min-height: 48px;
-    background: var(--color-primary);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-height: 48px !important;
+    background: var(--color-primary) !important;
     color: #ffffff !important;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(42, 59, 153, 0.25);
-    transition: background-color 180ms ease, transform 180ms ease;
+    font-size: 0.9375rem !important;
+    font-weight: 700 !important;
+    border-radius: var(--radius-md) !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    box-shadow: 0 4px 14px rgba(42, 59, 153, 0.25) !important;
+    transition: background-color 180ms ease, transform 180ms ease !important;
 
     &:active {
       transform: scale(0.98);
@@ -1047,22 +1056,87 @@ body.nav-scroll-locked {
 
   // Navigation Drawer
   .nav-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
-    width: min(360px, 88vw);
+    width: min(340px, 86vw);
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
     background: var(--color-surface);
     z-index: 999;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
-    padding: 72px var(--space-md) var(--space-xl);
+    scrollbar-width: thin;
+    padding: 16px var(--space-md) var(--space-lg);
     box-shadow: -6px 0 28px rgba(0, 0, 0, 0.16);
 
     visibility: hidden;
     pointer-events: none;
     transform: translateX(100%);
     transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), visibility 300ms ease;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(42, 59, 153, 0.2);
+      border-radius: 4px;
+    }
+  }
+
+  // Sticky Header Inside Mobile Navigation Drawer
+  .mobile-nav-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: sticky !important;
+
+    top: -16px !important;
+    padding: 16px var(--space-md) !important;
+    background: var(--color-surface) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    z-index: 999999 !important;
+  }
+
+  .mobile-nav-title {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: var(--color-primary) !important;
+  }
+
+  .mobile-nav-close {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-md) !important;
+    background: transparent !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease !important;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-primary-light) !important;
+      border-color: var(--color-primary) !important;
+      color: var(--color-primary) !important;
+    }
+  }
+
+  .navbar.is-open .menu-toggle {
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 
   .navbar.is-open .nav-wrapper {

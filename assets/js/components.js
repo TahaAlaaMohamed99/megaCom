@@ -154,6 +154,11 @@ function initNavbar() {
         // Mobile smooth vertical accordion expand
         subMenu.style.maxHeight = subMenu.scrollHeight + 60 + "px";
         updateMobileAncestorsHeight(item);
+
+        // Smoothly bring expanding item into view inside mobile drawer
+        setTimeout(() => {
+          item.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }, 120);
       }
 
       if (focusFirstItem) {
@@ -354,6 +359,14 @@ function initNavbar() {
       } else {
         openMobileNav();
       }
+    });
+  }
+
+  const mobileNavClose = document.querySelector("#mobileNavClose");
+  if (mobileNavClose) {
+    mobileNavClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeMobileNav();
     });
   }
 
