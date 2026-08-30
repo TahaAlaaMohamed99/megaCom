@@ -103,10 +103,19 @@ function initNavbar() {
     if (subMenu) {
       if (!isMobile()) {
         // Smart Viewport Collision Detection (prevent flyout from spilling off-screen)
+        const parentSubMenu = item.parentElement?.closest(".sub-menu");
+        const parentOpensLeft = parentSubMenu?.classList.contains("opens-left");
+
         subMenu.classList.remove("opens-left");
+        if (parentOpensLeft) {
+          subMenu.classList.add("opens-left");
+        }
+
         const rect = subMenu.getBoundingClientRect();
         if (rect.right > window.innerWidth - 16) {
           subMenu.classList.add("opens-left");
+        } else if (rect.left < 16 && parentOpensLeft) {
+          subMenu.classList.remove("opens-left");
         }
       } else {
         // Mobile smooth accordion expand
@@ -139,6 +148,7 @@ function initNavbar() {
 
     const subMenu = item.querySelector(":scope > .sub-menu");
     if (subMenu) {
+      subMenu.classList.remove("opens-left");
       if (isMobile()) {
         subMenu.style.maxHeight = null;
       }
