@@ -277,6 +277,7 @@ body.nav-scroll-locked {
 }
 
 // ============================================================
+// ============================================================
 // Sub-menu (Desktop JS Controlled)
 // ============================================================
 
@@ -287,8 +288,21 @@ body.nav-scroll-locked {
 
   z-index: 1001;
 
-  min-width: 250px;
-  max-width: 340px;
+  min-width: 260px;
+  max-width: 350px;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(42, 59, 153, 0.2) transparent;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(42, 59, 153, 0.2);
+    border-radius: 4px;
+  }
 
   margin: 0;
   padding: var(--space-xs);
@@ -316,8 +330,8 @@ body.nav-scroll-locked {
     width: 100%;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
 
     margin: 2px 0;
 
@@ -357,12 +371,13 @@ body.nav-scroll-locked {
       margin-right: 0;
 
       .dropdown-arrow {
-        transform: rotate(-90deg);
+        transform: rotate(0deg);
+        transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       &[aria-expanded="true"] {
         .dropdown-arrow {
-          transform: rotate(0deg);
+          transform: rotate(180deg);
         }
       }
     }
@@ -397,19 +412,58 @@ body.nav-scroll-locked {
 }
 
 // ============================================================
-// Nested Dropdowns (Flyout Multi-level)
+// Nested Dropdowns (Underneath / Vertical Accordion Style)
 // ============================================================
 
 .sub-menu {
   .menu-item-has-children {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
 
     > .sub-menu {
-      top: calc(-1 * var(--space-xs));
-      left: calc(100% + 6px);
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
 
-      transform: translateX(8px) scale(0.98);
-      transform-origin: top left;
+      min-width: 100%;
+      max-width: 100%;
+      width: 100%;
+      max-height: none;
+      overflow: visible;
+
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding: 2px 0 2px 10px;
+      padding-inline-start: 10px;
+
+      background: transparent;
+      border: 0;
+      border-left: 2px solid rgba(42, 59, 153, 0.2);
+      border-inline-start: 2px solid rgba(42, 59, 153, 0.2);
+      border-radius: 0;
+      box-shadow: none;
+
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: none;
+
+      transition: opacity 180ms ease;
+
+      .menu-item {
+        > a,
+        .menu-item-row > a {
+          font-size: var(--font-size-xs, 0.8125rem);
+          min-height: 34px;
+          padding: 4px var(--space-xs);
+        }
+      }
     }
 
     &.is-open {
@@ -418,27 +472,24 @@ body.nav-scroll-locked {
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
-        transform: translateX(0) scale(1);
+        transform: none;
       }
 
-      > .menu-item-row > .dropdown-toggle {
+      > .menu-item-row > .dropdown-toggle,
+      > .dropdown-toggle {
         .dropdown-arrow {
-          transform: rotate(0deg);
+          transform: rotate(180deg);
         }
       }
     }
+  }
 
-    // When JS detects collision with right edge
-    > .sub-menu.opens-left {
-      left: auto;
-      right: calc(100% + 6px);
-      transform: translateX(-8px) scale(0.98);
-      transform-origin: top right;
-    }
-
-    &.is-open > .sub-menu.opens-left {
-      transform: translateX(0) scale(1);
-    }
+  // Deeper nested levels (3, 4)
+  .sub-menu .menu-item-has-children > .sub-menu {
+    border-left: 2px solid rgba(42, 59, 153, 0.12);
+    border-inline-start: 2px solid rgba(42, 59, 153, 0.12);
+    padding-left: 8px;
+    padding-inline-start: 8px;
   }
 }
 
@@ -808,34 +859,8 @@ body.nav-scroll-locked {
     }
 
     .sub-menu {
-      background: transparent !important;
-    }
-
-    .nav-links > .menu-item > .sub-menu {
-      border-color: rgba(228, 232, 248, 0.25) !important;
-    }
-
-    .nav-links > .menu-item > .sub-menu > .menu-item > .sub-menu {
-      border-color: rgba(228, 232, 248, 0.18) !important;
-    }
-
-    .nav-links > .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item > .sub-menu {
-      border-color: rgba(228, 232, 248, 0.14) !important;
-    }
-
-    .nav-links > .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item > .sub-menu {
-      border-color: rgba(228, 232, 248, 0.10) !important;
-    }
-
-    .sub-menu .sub-menu {
-      border-color: rgba(228, 232, 248, 0.12) !important;
-    }
-
-    .menu-item-has-children.is-open {
-      > .dropdown-toggle,
-      > .menu-item-row > .dropdown-toggle {
-        background: rgba(228, 232, 248, 0.15);
-      }
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.1);
     }
   }
 }
