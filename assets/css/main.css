@@ -684,6 +684,7 @@ body.nav-scroll-locked {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: linear-gradient(90deg, rgba(5, 10, 30, 0.92) 0%, rgba(5, 10, 30, 0.78) 35%, rgba(5, 10, 30, 0.42) 65%, rgba(5, 10, 30, 0.5) 100%);
 }
 
 .hero-slide-container {
@@ -701,7 +702,7 @@ body.nav-scroll-locked {
 .hero-slide-title {
   max-width: 760px;
   margin: 0;
-  color: var(--color-text-primary);
+  color: #fff;
   font-size: clamp(2rem, 3.5vw, 4.5rem);
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.035em;
@@ -715,7 +716,7 @@ body.nav-scroll-locked {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.72);
   font-size: var(--font-size-lg);
   line-height: 1.7;
 }
@@ -746,9 +747,9 @@ body.nav-scroll-locked {
 }
 
 .hero-btn-secondary {
-  color: var(--color-text-primary);
+  color: #fff;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--color-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
 }
 
