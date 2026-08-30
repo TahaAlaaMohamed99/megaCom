@@ -1718,4 +1718,31 @@ ul.list--default li::marker {
   .service-client {
     font-size: var(--font-size-sm);
   }
+}
+.methodology {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.methodology > div {
+  flex: 1;
+}
+
+.methodology__image img {
+  width: 100%;
+  height: 380px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .methodology {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .methodology__image img {
+    height: 280px;
+  }
 }/*# sourceMappingURL=main.css.map */
