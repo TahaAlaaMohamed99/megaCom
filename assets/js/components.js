@@ -43,25 +43,46 @@ function initNavbar() {
   // 1. Highlight Current Active Route & Parent Ancestors
   // ------------------------------------------------------------
   function highlightActiveRoutes() {
-    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+    const rawPath = window.location.pathname.replace(/\/index\.html$/, "/") || "/";
+    const currentPath = rawPath === "/" ? "/" : rawPath.replace(/\/$/, "");
     const allLinks = navbar.querySelectorAll(".menu a");
+
+    // Clear all stale active states first
+    navbar.querySelectorAll(".menu-item, .menu a, .menu li").forEach((item) => {
+      item.classList.remove("current-menu-item", "active", "current-menu-ancestor", "current-menu-parent");
+    });
 
     allLinks.forEach((link) => {
       try {
         const linkUrl = new URL(link.href, window.location.origin);
-        const linkPath = linkUrl.pathname.replace(/\/$/, "") || "/";
+        const rawLinkPath = linkUrl.pathname.replace(/\/index\.html$/, "/") || "/";
+        const linkPath = rawLinkPath === "/" ? "/" : rawLinkPath.replace(/\/$/, "");
 
-        if (linkPath === currentPath) {
-          const li = link.closest(".menu-item");
-          if (li) {
-            li.classList.add("current-menu-item", "active");
-
-            // Mark all parent menu items up the tree
-            let parentLi = li.parentElement?.closest(".menu-item-has-children");
-            while (parentLi) {
-              parentLi.classList.add("current-menu-ancestor", "current-menu-parent");
-              parentLi = parentLi.parentElement?.closest(".menu-item-has-children");
+        // On root home page, only activate Home link
+        if (currentPath === "/") {
+          if (linkPath === "/") {
+            const topMenuItem = link.closest(".nav-links > .menu-item");
+            if (topMenuItem) {
+              topMenuItem.classList.add("current-menu-item", "active");
             }
+          }
+          return;
+        }
+
+        // On inner pages, match exact route or child path
+        const isMatch = linkPath !== "/" && (currentPath === linkPath || currentPath.startsWith(linkPath + "/"));
+
+        if (isMatch) {
+          link.classList.add("current-menu-item", "active");
+          const parentLi = link.closest("li");
+          if (parentLi) {
+            parentLi.classList.add("current-menu-item", "active");
+          }
+
+          // Mark top-level navbar parent menu item as active ancestor
+          const topMenuItem = link.closest(".nav-links > .menu-item");
+          if (topMenuItem) {
+            topMenuItem.classList.add("current-menu-ancestor", "current-menu-parent", "active");
           }
         }
       } catch (e) {
