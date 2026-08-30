@@ -296,20 +296,7 @@ body.nav-scroll-locked {
 
   min-width: 260px;
   max-width: 350px;
-  max-height: calc(100vh - 90px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(42, 59, 153, 0.2) transparent;
-
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(42, 59, 153, 0.2);
-    border-radius: 4px;
-  }
+  overflow: visible;
 
   margin: 0;
   padding: var(--space-xs);
@@ -433,18 +420,16 @@ body.nav-scroll-locked {
     align-items: stretch;
     width: 100%;
 
-    >.sub-menu {
+    > .sub-menu {
       position: absolute;
       top: -8px;
-      left: calc(100% + 4px);
+      left: 100%;
       right: auto;
 
       min-width: 250px;
       max-width: 340px;
       width: auto;
-      max-height: calc(100vh - 90px);
-      overflow-y: auto;
-      overscroll-behavior: contain;
+      overflow: visible;
 
       margin: 0;
       padding: var(--space-xs);
@@ -465,17 +450,31 @@ body.nav-scroll-locked {
 
       transition: opacity 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1), visibility 180ms cubic-bezier(0.16, 1, 0.3, 1);
 
+      // Invisible hover bridge preventing mouse-gap disconnection
+      &::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        bottom: -12px;
+        left: -16px;
+        width: 24px;
+      }
+
       &.opens-left {
         left: auto;
-        right: calc(100% + 4px);
+        right: 100%;
         transform: translateX(6px) scale(0.98);
         transform-origin: top right;
+
+        &::before {
+          left: auto;
+          right: -16px;
+        }
       }
 
       .menu-item {
-
-        >a,
-        .menu-item-row>a {
+        > a,
+        .menu-item-row > a {
           font-size: var(--font-size-xs, 0.8125rem);
           min-height: 34px;
           padding: 4px var(--space-xs);
@@ -483,8 +482,16 @@ body.nav-scroll-locked {
       }
     }
 
-    &.is-open {
-      >.sub-menu {
+    > .dropdown-toggle,
+    > .menu-item-row > .dropdown-toggle {
+      .dropdown-arrow {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &.is-open,
+    &:hover {
+      > .sub-menu {
         display: block;
         visibility: visible;
         opacity: 1;
@@ -492,11 +499,54 @@ body.nav-scroll-locked {
         transform: translateX(0) scale(1);
       }
 
-      >.menu-item-row>.dropdown-toggle,
-      >.dropdown-toggle {
+      > .menu-item-row > .dropdown-toggle,
+      > .dropdown-toggle {
+        color: var(--color-primary);
+
         .dropdown-arrow {
           transform: rotate(-90deg);
         }
+      }
+    }
+  }
+}
+
+// Hover trigger on Desktop Web
+@media (min-width: 1025px) {
+  .menu-item-has-children:hover {
+    > .sub-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+
+    > .menu-item-row > .dropdown-toggle,
+    > .dropdown-toggle {
+      color: var(--color-primary);
+
+      .dropdown-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .sub-menu .menu-item-has-children:hover {
+    > .sub-menu {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0) scale(1);
+    }
+
+    > .menu-item-row > .dropdown-toggle,
+    > .dropdown-toggle {
+      color: var(--color-primary);
+
+      .dropdown-arrow {
+        transform: rotate(-90deg);
       }
     }
   }
