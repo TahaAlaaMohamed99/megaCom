@@ -53,6 +53,7 @@ body.nav-scroll-locked {
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -909,7 +910,6 @@ body.nav-scroll-locked {
     min-height: 40px !important;
     font-size: 0.875rem !important;
     padding: 8px 12px !important;
-    border-left: 2px solid rgba(42, 59, 153, 0.15);
   }
 
   .mobile-nav-footer {
@@ -1272,40 +1272,30 @@ body.nav-scroll-locked {
   .nav-links>.menu-item>.sub-menu {
     padding-left: 12px;
     padding-inline-start: 12px;
-    border-left: 2px solid var(--color-primary-light) !important;
-    border-inline-start: 2px solid var(--color-primary-light) !important;
   }
 
   // Level 2 Submenu (Under Level 1 items)
   .nav-links>.menu-item>.sub-menu>.menu-item>.sub-menu {
     padding-left: 12px;
     padding-inline-start: 12px;
-    border-left: 2px solid rgba(42, 59, 153, 0.25) !important;
-    border-inline-start: 2px solid rgba(42, 59, 153, 0.25) !important;
   }
 
   // Level 3 Submenu (Under Level 2 items)
   .nav-links>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu {
     padding-left: 10px;
     padding-inline-start: 10px;
-    border-left: 2px solid rgba(42, 59, 153, 0.18) !important;
-    border-inline-start: 2px solid rgba(42, 59, 153, 0.18) !important;
   }
 
   // Level 4 Submenu (Contains Level 5 items)
   .nav-links>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu>.menu-item>.sub-menu {
     padding-left: 10px;
     padding-inline-start: 10px;
-    border-left: 2px solid rgba(42, 59, 153, 0.12) !important;
-    border-inline-start: 2px solid rgba(42, 59, 153, 0.12) !important;
   }
 
   // Fallback for any further nested submenus
   .sub-menu .sub-menu {
     padding-left: 10px;
     padding-inline-start: 10px;
-    border-left: 2px solid rgba(42, 59, 153, 0.15) !important;
-    border-inline-start: 2px solid rgba(42, 59, 153, 0.15) !important;
   }
 
   // Nested Item Sizing
@@ -1671,15 +1661,19 @@ body.nav-scroll-locked {
 @media (max-width: 600px) {
 
 
-
+  .logo {
+    img {
+      height: 70px;
+    }
+  }
 
 
   .hero-slide-overlay {
     background:
       linear-gradient(180deg,
-        rgba(5, 10, 30, 0.1) 0%,
-        rgba(5, 10, 30, 0.58) 42%,
-        rgba(5, 10, 30, 0.95) 100%);
+        rgba(5, 10, 30, 0.68) 0%,
+        rgba(5, 10, 30, 0.88) 45%,
+        rgba(5, 10, 30, 0.98) 100%);
   }
 
   .hero-slide-container {
