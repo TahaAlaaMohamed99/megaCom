@@ -1349,14 +1349,6 @@ body.nav-scroll-locked {
 }
 
 @media (max-width: 600px) {
-  .hero-slider {
-    min-height: 620px;
-  }
-  .hero-slide {
-    min-height: 320px;
-    align-items: center;
-    background-position: 60% center;
-  }
   .hero-slide-overlay {
     background: linear-gradient(180deg, rgba(5, 10, 30, 0.1) 0%, rgba(5, 10, 30, 0.58) 42%, rgba(5, 10, 30, 0.95) 100%);
   }
@@ -1365,11 +1357,11 @@ body.nav-scroll-locked {
   }
   .hero-slide-content {
     padding: 35px 0 35px;
-    text-align: center;
     margin-inline: auto;
     display: flex;
+    height: 85vh;
+    justify-content: center;
     flex-direction: column;
-    align-items: center;
   }
   .hero-slide-title {
     font-size: clamp(2rem, 10vw, 2.8rem);
@@ -1379,7 +1371,8 @@ body.nav-scroll-locked {
   }
   .hero-slide-description {
     margin-top: var(--space-md);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
+    -webkit-line-clamp: 5;
     line-height: 1.65;
     text-align: center;
     margin-inline: auto;
