@@ -13,18 +13,26 @@
     <div id="navbar"></div>
 
     <main class="page">
-      <section class="section">
+      <header class="page-header">
         <div class="container">
-          <header class="page-header">
-            <h1 class="title">Basic Features</h1>
+          <h1 class="title">Basic Features</h1>
+          <nav class="breadcrumb" aria-label="Breadcrumbs">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/">Home</a></li>
+              <li class="breadcrumb__item"><a href="/methodology/">Methodology</a></li>
+              <li class="breadcrumb__item active" aria-current="page">Basic Features</li>
+            </ol>
+          </nav>
+          <p class="page-header__description">
+            There are some basic features that Megacom depends on when
+            applying its methodology. These features could be summarised as
+            follows:
+          </p>
+        </div>
+      </header>
 
-            <p class="des page-header__description">
-              There are some basic features that Megacom depends on when
-              applying its methodology. These features could be summarised as
-              follows:
-            </p>
-          </header>
-
+      <div class="container">
+        <section class="section">
           <div class="content">
             <ul class="list list--features">
               <li class="list-item list-item--feature">
@@ -78,8 +86,8 @@
               </li>
             </ul>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <div id="footer"></div>
