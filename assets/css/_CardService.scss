@@ -275,7 +275,7 @@ a.card,
   right: 1.75rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 0.65rem;
   z-index: 2;
 }
@@ -286,6 +286,7 @@ a.card,
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 1.65rem;
   font-weight: 800;
+  width: 100%;
   color: #ffffff;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -326,4 +327,207 @@ a.card,
   background: #003666;
   color: #ffffff !important;
   text-decoration: none !important;
+}
+
+/* Ultra-Premium Luxury Showcase Cards for Our Services Page */
+.services-intro-box {
+  margin-bottom: 2.5rem;
+  max-width: 780px;
+
+  .section-subtitle {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.luxury-services-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.luxury-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 35px -10px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.luxury-card:nth-child(even) {
+  grid-template-columns: 1fr 1.1fr;
+
+  .luxury-card-media {
+    order: 2;
+  }
+
+  @media (max-width: 992px) {
+    .luxury-card-media {
+      order: 0;
+    }
+  }
+}
+
+.luxury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
+  border-color: rgba(0, 86, 179, 0.25);
+}
+
+.luxury-card-media {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.luxury-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover .luxury-card-img {
+  transform: scale(1.05);
+}
+
+.luxury-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.luxury-card-num {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.luxury-card-body {
+  padding: 2.75rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 576px) {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+.luxury-card-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0056b3;
+  margin-bottom: 0.5rem;
+}
+
+.luxury-card-title {
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.luxury-card:hover .luxury-card-title {
+  color: #0056b3;
+}
+
+.luxury-card-text {
+  margin: 0 0 1.75rem 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.975rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.luxury-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-chip {
+  padding: 0.35rem 0.85rem;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.luxury-card:hover .feature-chip {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.luxury-card-action {
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.luxury-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0056b3;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.luxury-card:hover .luxury-btn {
+  color: #003666;
+  gap: 0.85rem;
 }
