@@ -1151,7 +1151,7 @@ ul.list--default li::marker {
 
 .section__title {
   margin-bottom: var(--space-sm);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 .section__des {
@@ -1341,5 +1341,188 @@ ul.list--default li::marker {
   }
   .list-item--feature {
     padding: var(--space-md);
+  }
+}
+/* ========================================
+   Service List
+======================================== */
+/* ========================================
+   Service List
+======================================== */
+/* ========================================
+   Service List
+======================================== */
+.service-list {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+/* ========================================
+   Desktop Header
+======================================== */
+.service-header {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  min-height: 56px;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.service-header > div {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.service-header > div:first-child {
+  border-right: 1px solid var(--color-primary-dark);
+}
+
+/* Hide pseudo labels on desktop */
+.service-client::before,
+.service-content::before {
+  display: none;
+}
+
+/* ========================================
+   Each Row
+======================================== */
+.service-row {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-row:last-child {
+  border-bottom: 0;
+}
+
+/* ========================================
+   Client
+======================================== */
+.service-client {
+  padding: var(--space-lg);
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.6;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+/* ========================================
+   Scope
+======================================== */
+.service-content {
+  padding: var(--space-lg);
+  background: var(--color-surface);
+}
+
+.service-content h3 {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+.service-content p {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  line-height: 1.7;
+}
+
+.service-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.service-content ul {
+  margin: var(--space-sm) 0 0;
+  padding-left: var(--space-lg);
+  color: var(--color-text-secondary);
+}
+
+.service-content li {
+  margin-bottom: var(--space-xxs);
+  line-height: 1.6;
+}
+
+.service-content li::marker {
+  color: var(--color-primary);
+}
+
+/* ========================================
+   Tablet
+   Hide desktop header
+   Show labels in each row
+======================================== */
+@media (max-width: 1024px) {
+  .service-header {
+    display: none;
+  }
+  .service-row {
+    display: block;
+    padding: 0;
+  }
+  .service-client,
+  .service-content {
+    border: 0;
+  }
+  /* Client label */
+  .service-client {
+    padding: var(--space-md) var(--space-lg) var(--space-xs);
+    background: var(--color-background);
+  }
+  .service-client::before {
+    content: "Client Name";
+    display: block;
+    margin-bottom: 4px;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  /* Scope label */
+  .service-content {
+    padding: var(--space-xs) var(--space-lg) var(--space-lg);
+  }
+  .service-content::before {
+    content: "Scope of Services";
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
+/* ========================================
+   Mobile
+======================================== */
+@media (max-width: 768px) {
+  .service-list {
+    border-radius: var(--radius-md);
+  }
+  .service-client {
+    padding: var(--space-md) var(--space-md) var(--space-xs);
+  }
+  .service-content {
+    padding: var(--space-xs) var(--space-md) var(--space-md);
+  }
+  .service-content h3 {
+    font-size: var(--font-size-md);
+  }
+  .service-content p,
+  .service-client {
+    font-size: var(--font-size-sm);
   }
 }/*# sourceMappingURL=main.css.map */
