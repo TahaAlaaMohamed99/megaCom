@@ -672,6 +672,7 @@ body.nav-scroll-locked {
 
   // Mobile Accordion Sub-menus (All levels: 1, 2, 3, 4, 5+ open underneath each other)
   .sub-menu,
+  .sub-menu .sub-menu,
   .sub-menu .menu-item-has-children > .sub-menu,
   .menu-item-has-children > .sub-menu {
     position: static !important;
@@ -680,12 +681,11 @@ body.nav-scroll-locked {
     right: auto !important;
     bottom: auto !important;
     width: 100% !important;
-    min-width: 0 !important;
+    min-width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
 
-    display: block !important;
-    max-height: 0;
+    display: none;
     overflow: hidden;
 
     margin: 0;
@@ -694,12 +694,12 @@ body.nav-scroll-locked {
     border-radius: 0 !important;
     box-shadow: none !important;
 
-    visibility: visible !important;
+    visibility: hidden;
     opacity: 0;
-    pointer-events: auto !important;
+    pointer-events: none;
     transform: none !important;
 
-    transition: max-height 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
+    transition: opacity 200ms ease;
   }
 
   // Visual Hierarchy & Indentation for nested levels (1 -> 2 -> 3 -> 4 -> 5)
@@ -763,10 +763,15 @@ body.nav-scroll-locked {
     }
   }
 
-  // Open state for all accordion levels
+  // Open state for all accordion levels on mobile
   .menu-item-has-children.is-open {
     > .sub-menu {
-      opacity: 1;
+      display: flex !important;
+      flex-direction: column !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      max-height: none !important;
       margin-top: 4px;
       margin-bottom: 6px;
     }
