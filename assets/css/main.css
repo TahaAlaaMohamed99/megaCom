@@ -668,6 +668,12 @@ body.nav-scroll-locked {
 
 .site-footer {
   margin-top: var(--space-xxxl);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
   background: var(--color-primary-dark);
   color: var(--color-text-on-primary);
 }
@@ -698,6 +704,10 @@ body.nav-scroll-locked {
 }
 .footer-logo:hover {
   opacity: 0.8;
+}
+.footer-logo img {
+  height: 95px;
+  filter: brightness(0) invert(1);
 }
 
 .footer-description {
