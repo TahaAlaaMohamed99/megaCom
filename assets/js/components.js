@@ -80,6 +80,18 @@ function initNavbar() {
     }
   }
 
+  function updateMobileAncestorsHeight(item) {
+    if (!isMobile()) return;
+    let ancestor = item.parentElement?.closest(".menu-item-has-children.is-open");
+    while (ancestor) {
+      const ancSub = ancestor.querySelector(":scope > .sub-menu");
+      if (ancSub) {
+        ancSub.style.maxHeight = ancSub.scrollHeight + 80 + "px";
+      }
+      ancestor = ancestor.parentElement?.closest(".menu-item-has-children.is-open");
+    }
+  }
+
   function openSubmenu(item, focusFirstItem = false) {
     clearItemTimer(item);
 
@@ -118,15 +130,9 @@ function initNavbar() {
           subMenu.classList.remove("opens-left");
         }
       } else {
-        // Mobile smooth accordion expand
-        subMenu.style.maxHeight = subMenu.scrollHeight + 50 + "px";
-        
-        // Recalculate parent accordion heights if nested
-        let ancestorSubMenu = item.parentElement?.closest(".sub-menu");
-        while (ancestorSubMenu) {
-          ancestorSubMenu.style.maxHeight = ancestorSubMenu.scrollHeight + subMenu.scrollHeight + 50 + "px";
-          ancestorSubMenu = ancestorSubMenu.parentElement?.closest(".sub-menu");
-        }
+        // Mobile smooth vertical accordion expand
+        subMenu.style.maxHeight = subMenu.scrollHeight + 60 + "px";
+        updateMobileAncestorsHeight(item);
       }
 
       if (focusFirstItem) {
@@ -154,7 +160,30 @@ function initNavbar() {
       }
       // Recursively close open child submenus
       const openChildren = subMenu.querySelectorAll(".menu-item-has-children.is-open");
-      openChildren.forEach((child) => closeSubmenu(child));
+      openChildren.forEach((child) => {
+        child.classList.remove("is-open");
+        const childBtn = child.querySelector(":scope > .dropdown-toggle, :scope > .menu-item-row > .dropdown-toggle");
+        if (childBtn) childBtn.setAttribute("aria-expanded", "false");
+        const childSub = child.querySelector(":scope > .sub-menu");
+        if (childSub) {
+          childSub.classList.remove("opens-left");
+          if (isMobile()) {
+            childSub.style.maxHeight = null;
+          }
+        }
+      });
+
+      if (isMobile()) {
+        // Recalculate ancestors after closing
+        let ancestor = item.parentElement?.closest(".menu-item-has-children.is-open");
+        while (ancestor) {
+          const ancSub = ancestor.querySelector(":scope > .sub-menu");
+          if (ancSub) {
+            ancSub.style.maxHeight = ancSub.scrollHeight + 60 + "px";
+          }
+          ancestor = ancestor.parentElement?.closest(".menu-item-has-children.is-open");
+        }
+      }
     }
   }
 
