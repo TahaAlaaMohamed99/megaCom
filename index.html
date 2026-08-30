@@ -1,21 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | MegaCom</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
- 
-</head>
-<body>
-  <div id="navbar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | MegaCom</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
 
-  <main>
-    <h1>Home</h1>
-  </main>
+    <main>
+      <section class="hero-slider swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <article class="hero-slide swiper-slide" style="background-image: url('/assets/images/hero-01.jpeg')">
+            <div class="hero-slide-overlay"></div>
 
-  <div id="footer"></div>
+            <div class="hero-slide-container">
+              <div class="hero-slide-content">
+                <h1 class="hero-slide-title">Our Services</h1>
 
-  <script src="/assets/js/components.js"></script>
-</body>
+                <p class="hero-slide-description">
+                  <span class="company-name"> Megacom </span> is providing its services in many disciplines,Megacom has also a sister company working in the
+                  field of IT Consultancy & Security providing ERP for Government sector and Private companies.which could be listed as follows
+                </p>
+
+                <div class="hero-slide-actions">
+                  <a href="/services/" class="hero-btn hero-btn-primary"> Learn More </a>
+
+                  <a href="/contact-us/" class="hero-btn hero-btn-secondary"> Contact US </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="hero-slide swiper-slide" style="background-image: url('/assets/images/hero-02.jpeg')">
+            <div class="hero-slide-overlay"></div>
+
+            <div class="hero-slide-container">
+              <div class="hero-slide-content">
+                <h2 class="hero-slide-title">About Us</h2>
+
+                <p class="hero-slide-description">
+                  When going through the options on the market, nationalcasinovip.com regularly appears in recommendations and comparison portals. Several
+                  payment partners ensure high availability of cashier services around the clock. The homepage highlights current promotions and popular games
+                  in a clear way
+                </p>
+
+                <div class="hero-slide-actions">
+                  <a href="/about-us/" class="hero-btn hero-btn-primary"> Learn More </a>
+
+                  <a href="/contact-us/" class="hero-btn hero-btn-secondary"> Contact US </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="hero-slide swiper-slide" style="background-image: url('/assets/images/hero-03.jpg')">
+            <div class="hero-slide-overlay"></div>
+
+            <div class="hero-slide-container">
+              <div class="hero-slide-content">
+                <h2 class="hero-slide-title">Success Stories</h2>
+
+                <p class="hero-slide-description">
+                  Policies and Regulatory Reforms Research Study on Streamlining the Egyptian Laws, Regulations and Procedures Governing SMEs Establishment,
+                  Growth, Export and Exit Research Study on Streamlining the Egyptian Laws, Regulations and Procedures for Property registration A Tax System
+                  for Micro,
+                </p>
+
+                <div class="hero-slide-actions">
+                  <a href="/success-stories/" class="hero-btn hero-btn-primary"> Learn More </a>
+
+                  <a href="/contact-us/" class="hero-btn hero-btn-secondary"> Contact Us </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Slide 4 -->
+          <article class="hero-slide swiper-slide" style="background-image: url('/assets/images/hero-03.jpg')">
+            <div class="hero-slide-overlay"></div>
+
+            <div class="hero-slide-container">
+              <div class="hero-slide-content">
+                <h2 class="hero-slide-title">Methodology</h2>
+
+                <p class="hero-slide-description">
+                  <span class="company-name"> Megacom </span> has developed two methodologies in delivering its consultation services; the first methodology is called “ARII”. The initials stand
+                  for Assess, Recommend, Implement and Institutionalise. The second is “IDM”, or the Industry/Discipline
+                </p>
+
+                <div class="hero-slide-actions">
+                  <a href="/methodology/" class="hero-btn hero-btn-primary"> Learn More </a>
+
+                  <a href="/contact-us/" class="hero-btn hero-btn-secondary"> Contact Us </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Dots -->
+
+        <div class="hero-slider-dots swiper-pagination"></div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/assets/js/components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  </body>
 </html>
