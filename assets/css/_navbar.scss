@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
   max-width: 100%;
   background-color: var(--color-background);
+  font-family: var(--font-family);
 }
 
 html {
@@ -96,8 +97,8 @@ body.nav-scroll-locked {
   transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 
   &:hover {
-     color: var(--color-primary);
-   }
+    color: var(--color-primary);
+  }
 
   &:focus-visible {
     outline: 2px solid var(--color-primary);
@@ -187,7 +188,7 @@ body.nav-scroll-locked {
 
     color: var(--color-text-secondary);
     font-family: var(--font-family);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-medium);
     line-height: 1;
     text-decoration: none;
@@ -199,7 +200,7 @@ body.nav-scroll-locked {
   > a:hover,
   .menu-item-row > a:hover {
     color: var(--color-primary);
-   }
+  }
 
   > a:focus-visible,
   .menu-item-row > a:focus-visible {
@@ -214,7 +215,7 @@ body.nav-scroll-locked {
     .menu-item-row > a {
       color: var(--color-primary);
       font-weight: var(--font-weight-semibold);
-     }
+    }
   }
 
   &.current-menu-ancestor,
@@ -271,13 +272,7 @@ body.nav-scroll-locked {
     transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
- 
-
- 
-
   &[aria-expanded="true"] {
-   
-
     .dropdown-arrow {
       transform: rotate(180deg);
     }
@@ -358,8 +353,6 @@ body.nav-scroll-locked {
       white-space: normal;
 
       transition: color 150ms ease, background-color 150ms ease, transform 150ms ease;
-
-     
     }
 
     .dropdown-toggle {
@@ -392,7 +385,7 @@ body.nav-scroll-locked {
   > .dropdown-toggle,
   > .menu-item-row > .dropdown-toggle {
     color: var(--color-primary);
- 
+
     .dropdown-arrow {
       transform: rotate(180deg);
     }
@@ -461,12 +454,14 @@ body.nav-scroll-locked {
     .menu-item-row > a {
       color: var(--color-primary);
       font-weight: var(--font-weight-semibold);
-      background-color: var(--color-primary-light);
-     }
-      
+    }
   }
+ 
 }
-
+.menu-item.current-menu-item.active {
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+}
 // ============================================================
 // Medium Desktop Adjustments (1025px - 1240px)
 // ============================================================
