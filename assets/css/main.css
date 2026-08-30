@@ -140,9 +140,12 @@ body.nav-scroll-locked {
 }
 
 .navbar {
-  width: min(100% - var(--space-md) * 2, 1240px);
+  width: 100%;
+  max-width: 1240px;
   min-height: 72px;
   margin: 0 auto;
+  padding-inline: var(--space-md);
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1214,7 +1217,7 @@ body.nav-scroll-locked {
 
 .hero-slide {
   position: relative;
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   background-position: center;
@@ -1238,7 +1241,7 @@ body.nav-scroll-locked {
 
 .hero-slide-content {
   max-width: 720px;
-  padding-block: 120px;
+  padding-block: 20vh;
 }
 
 .hero-slide-title {
@@ -1258,8 +1261,8 @@ body.nav-scroll-locked {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
   line-height: 1.7;
 }
 
@@ -1350,8 +1353,8 @@ body.nav-scroll-locked {
     min-height: 620px;
   }
   .hero-slide {
-    min-height: 620px;
-    align-items: flex-end;
+    min-height: 320px;
+    align-items: center;
     background-position: 60% center;
   }
   .hero-slide-overlay {
@@ -1361,20 +1364,34 @@ body.nav-scroll-locked {
     width: calc(100% - var(--space-md) * 2);
   }
   .hero-slide-content {
-    padding: 70px 0 70px;
+    padding: 35px 0 35px;
+    text-align: center;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hero-slide-title {
     font-size: clamp(2rem, 10vw, 2.8rem);
     line-height: 1.08;
+    text-align: center;
+    margin-inline: auto;
   }
   .hero-slide-description {
     margin-top: var(--space-md);
-    font-size: var(--font-size-sm);
+    font-size: 1.05rem;
     line-height: 1.65;
+    text-align: center;
+    margin-inline: auto;
   }
   .hero-slide-actions {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
     margin-top: var(--space-lg);
+    margin-inline: auto;
   }
   .hero-btn {
     width: 100%;
@@ -1404,8 +1421,11 @@ body.nav-scroll-locked {
 }
 
 .footer-container {
-  width: min(100% - var(--space-lg) * 2, 1280px);
+  width: 100%;
+  max-width: 1240px;
   margin-inline: auto;
+  padding-inline: var(--space-md);
+  box-sizing: border-box;
   padding: var(--space-xxl) 0;
   display: grid;
   grid-template-columns: minmax(260px, 1.45fr) repeat(2, minmax(180px, 1fr)) minmax(220px, 1.15fr);
@@ -1575,9 +1595,12 @@ body.nav-scroll-locked {
 }
 
 .footer-bottom-container {
-  width: min(100% - var(--space-lg) * 2, 1280px);
+  width: 100%;
+  max-width: 1240px;
   min-height: 64px;
   margin-inline: auto;
+  padding-inline: var(--space-md);
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2010,9 +2033,10 @@ ul.list--default a:hover,
 
 .container {
   width: 100%;
-  max-width: min(100% - var(--space-md) * 2, 1240px);
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding-inline: var(--space-md);
+  box-sizing: border-box;
 }
 
 .section {
@@ -2925,7 +2949,6 @@ a.card,
   margin-top: 2rem;
   align-items: start;
 }
-
 @media (max-width: 992px) {
   .contact-section-grid {
     grid-template-columns: 1fr;
@@ -2950,7 +2973,6 @@ a.card,
   box-shadow: 0 8px 25px -8px rgba(15, 23, 42, 0.05);
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
-
 .contact-info-card:hover {
   transform: translateY(-3px);
   border-color: rgba(42, 59, 153, 0.3);
@@ -2973,7 +2995,6 @@ a.card,
   flex-direction: column;
   gap: 0.25rem;
 }
-
 .contact-info-body h4 {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
@@ -2981,9 +3002,7 @@ a.card,
   font-weight: 700;
   color: #0f172a;
 }
-
-.contact-info-body p,
-.contact-info-body a {
+.contact-info-body p, .contact-info-body a {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
   font-size: 0.9375rem;
@@ -2991,8 +3010,7 @@ a.card,
   line-height: 1.5;
   text-decoration: none;
 }
-
-.contact-info-body a:hover {
+.contact-info-body p:hover, .contact-info-body a:hover {
   color: var(--color-primary, #2A3B99);
 }
 
@@ -3004,7 +3022,6 @@ a.card,
   border: 1px solid rgba(226, 232, 240, 0.9);
   box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.08);
 }
-
 @media (max-width: 576px) {
   .contact-form-card {
     padding: 1.75rem 1.25rem;
@@ -3014,7 +3031,6 @@ a.card,
 .contact-form-header {
   margin-bottom: 2rem;
 }
-
 .contact-form-header h3 {
   margin: 0 0 0.5rem 0;
   font-family: "Inter", system-ui, sans-serif;
@@ -3023,7 +3039,6 @@ a.card,
   color: #0f172a;
   letter-spacing: -0.02em;
 }
-
 .contact-form-header p {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
@@ -3036,7 +3051,6 @@ a.card,
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
-
 @media (max-width: 640px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -3048,21 +3062,16 @@ a.card,
   flex-direction: column;
   gap: 0.5rem;
 }
-
 .form-group.full-width {
-  grid-column: 1 / -1;
+  grid-column: 1/-1;
 }
-
 .form-group label {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: #334155;
 }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group input, .form-group select, .form-group textarea {
   width: 100%;
   padding: 0.8rem 1rem;
   background: #f8fafc;
@@ -3074,21 +3083,17 @@ a.card,
   outline: none;
   transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   background: #ffffff;
   border-color: var(--color-primary, #2A3B99);
   box-shadow: 0 0 0 4px rgba(42, 59, 153, 0.12);
 }
-
-.form-group input::-webkit-input-placeholder,
-.form-group select::-webkit-input-placeholder,
-.form-group textarea::-webkit-input-placeholder {
+.form-group input::-moz-placeholder, .form-group select::-moz-placeholder, .form-group textarea::-moz-placeholder {
   color: #94a3b8;
 }
-
+.form-group input::placeholder, .form-group select::placeholder, .form-group textarea::placeholder {
+  color: #94a3b8;
+}
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
@@ -3112,12 +3117,10 @@ a.card,
   box-shadow: 0 4px 14px rgba(42, 59, 153, 0.35);
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
 .form-submit-btn:hover {
   background: var(--color-primary-dark, #182463);
   transform: translateY(-1px);
 }
-
 .form-submit-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;

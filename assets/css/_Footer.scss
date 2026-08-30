@@ -19,12 +19,11 @@
 // ============================================================
 
 .footer-container {
-  width: min(
-    calc(100% - (var(--space-lg) * 2)),
-    1280px
-  );
-
+  width: 100%;
+  max-width: 1240px;
   margin-inline: auto;
+  padding-inline: var(--space-md);
+  box-sizing: border-box;
 
   padding:
     var(--space-xxl)
@@ -302,14 +301,12 @@
 }
 
 .footer-bottom-container {
-  width: min(
-    calc(100% - (var(--space-lg) * 2)),
-    1280px
-  );
-
+  width: 100%;
+  max-width: 1240px;
   min-height: 64px;
-
   margin-inline: auto;
+  padding-inline: var(--space-md);
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;

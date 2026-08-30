@@ -422,12 +422,15 @@ function initNavbar() {
 // Initialize Components
 // ============================================================
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const navLoaded = await loadComponent("#navbar", "/components/navbar.html");
-  if (navLoaded) {
-    initNavbar();
-  }
-  await loadComponent("#footer", "/components/footer.html");
+document.addEventListener("DOMContentLoaded", () => {
+  Promise.all([
+    loadComponent("#navbar", "/components/navbar.html"),
+    loadComponent("#footer", "/components/footer.html")
+  ]).then(([navLoaded]) => {
+    if (navLoaded) {
+      initNavbar();
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
