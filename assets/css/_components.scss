@@ -91,14 +91,34 @@ ul.list--default,
 
 ul.list--default li,
 .list--default li {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
   color: var(--color-text-primary);
   font-size: var(--font-size-md);
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
-ul.list--default li::marker {
+ul.list--default li::marker,
+.list--default li::marker {
   color: var(--color-primary);
+}
+
+/* Unified Link Styling for Lists across all pages */
+ul.list--default a,
+.list--default a,
+.list a,
+.title--card a {
+  color: var(--color-primary, #0056b3);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold, 600);
+  transition: color 150ms ease, text-decoration 150ms ease;
+}
+
+ul.list--default a:hover,
+.list--default a:hover,
+.list a:hover,
+.title--card a:hover {
+  color: var(--color-primary-dark, #003666);
+  text-decoration: underline;
 }
 
 /* Buttons */
