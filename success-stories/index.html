@@ -1,39 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Success Stories | MegaCom</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-  <div id="navbar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success Stories | MegaCom</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
 
-  <main class="page">
-    <header class="page-header">
+    <main class="page">
+      <header class="page-header">
+        <div class="container">
+          <h1 class="title">Success Stories</h1>
+          <nav class="breadcrumb" aria-label="Breadcrumbs">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/">Home</a></li>
+              <li class="breadcrumb__item active" aria-current="page">
+                Success Stories
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </header>
+
       <div class="container">
-        <h1 class="title">Success Stories</h1>
-        <nav class="breadcrumb" aria-label="Breadcrumbs">
-          <ol class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="/">Home</a></li>
-            <li class="breadcrumb__item active" aria-current="page">Success Stories</li>
-          </ol>
-        </nav>
+        <section class="section">
+          <h2 class="title title--card">Our Client Success Stories</h2>
+          <p class="des">
+            Discover how MegaCom has helped clients achieve their strategic
+            objectives and operational excellence.
+          </p>
+
+          <div class="list--features">
+            <a
+              class="list-item--feature"
+              href="/success-stories/research-study-on-streamlining-the-egyptian-laws-regulations-and-procedures-governing/"
+              style="
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <h3 class="list-item__title">
+                Streamlining Egyptian Laws & Regulations for SMEs
+              </h3>
+              <p class="list-item__description des">
+                Research study for SMEPoL analyzing and streamlining the laws,
+                regulations and procedures governing SME establishment, growth,
+                export and exit in Egypt.
+              </p>
+              <span class="service-link mt-md"
+                >Read More <span class="arrow-icon">&rarr;</span></span
+              >
+            </a>
+
+            <!-- Next success story cards go here -->
+          </div>
+        </section>
       </div>
-    </header>
+    </main>
 
-    <div class="container">
-      <section class="section">
-        <h2 class="title title--card">Our Client Success Stories</h2>
-        <p class="des">
-          Discover how MegaCom has helped clients achieve their strategic objectives and operational excellence.
-        </p>
-      </section>
-    </div>
-  </main>
+    <div id="footer"></div>
 
-  <div id="footer"></div>
-
-  <script src="/assets/js/components.js"></script>
-</body>
+    <script src="/assets/js/components.js"></script>
+  </body>
 </html>

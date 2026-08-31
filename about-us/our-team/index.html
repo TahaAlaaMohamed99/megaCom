@@ -1,40 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Team | MegaCom</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-  <div id="navbar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team | MegaCom</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
 
-  <main class="page">
-    <header class="page-header">
+    <main class="page">
+      <header class="page-header">
+        <div class="container">
+          <h1 class="title">Our Team</h1>
+          <nav class="breadcrumb" aria-label="Breadcrumbs">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/">Home</a></li>
+              <li class="breadcrumb__item">
+                <a href="/about-us/">About Us</a>
+              </li>
+              <li class="breadcrumb__item active" aria-current="page">
+                Our Team
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </header>
+
       <div class="container">
-        <h1 class="title">Our Team</h1>
-        <nav class="breadcrumb" aria-label="Breadcrumbs">
-          <ol class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="/">Home</a></li>
-            <li class="breadcrumb__item"><a href="/about-us/">About Us</a></li>
-            <li class="breadcrumb__item active" aria-current="page">Our Team</li>
-          </ol>
-        </nav>
+        <section class="section">
+          <h2 class="title title--card">Meet Our Team</h2>
+          <p class="des">
+            Megacom has engaged the activities of highly qualified professionals
+            who possess proven track records of experience in each field we
+            provide consultation for.
+          </p>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-card__photo">
+                <!-- Replace with <img src="/assets/img/team/tarek-thabet.jpg" alt="Tarek Thabet"> -->
+                <svg
+                  class="placeholder-icon"
+                  width="56"
+                  height="56"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                </svg>
+              </div>
+              <h3 class="team-card__name">Tarek Thabet</h3>
+              <p class="team-card__role">Chairman</p>
+              <a class="team-card__email" href="mailto:tthabet@megacom-int.com"
+                >tthabet@megacom-int.com</a
+              >
+            </article>
+
+            <article class="team-card">
+              <div class="team-card__photo">
+                <!-- Replace with <img src="/assets/img/team/gamal-zaki.jpg" alt="Gamal Zaki"> -->
+                <svg
+                  class="placeholder-icon"
+                  width="56"
+                  height="56"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                </svg>
+              </div>
+              <h3 class="team-card__name">Gamal Zaki</h3>
+              <p class="team-card__role">Projects Director</p>
+              <a class="team-card__email" href="mailto:gzaki@megacom-int.com"
+                >gzaki@megacom-int.com</a
+              >
+            </article>
+
+            <article class="team-card">
+              <div class="team-card__photo">
+                <!-- Replace with <img src="/assets/img/team/ashraf-aseem.jpg" alt="Ashraf Aseem"> -->
+                <svg
+                  class="placeholder-icon"
+                  width="56"
+                  height="56"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                </svg>
+              </div>
+              <h3 class="team-card__name">Ashraf Aseem</h3>
+              <p class="team-card__role">Technical Director</p>
+              <a class="team-card__email" href="mailto:aaseem@megacom-int.com"
+                >aaseem@megacom-int.com</a
+              >
+            </article>
+          </div>
+        </section>
       </div>
-    </header>
+    </main>
 
-    <div class="container">
-      <section class="section">
-        <h2 class="title title--card">Meet Our Team</h2>
-        <p class="des">
-          Megacom has engaged the activities of highly qualified professionals who possess proven track records of experience in each field we provide consultation for.
-        </p>
-      </section>
-    </div>
-  </main>
+    <div id="footer"></div>
 
-  <div id="footer"></div>
-
-  <script src="/assets/js/components.js"></script>
-</body>
+    <script src="/assets/js/components.js"></script>
+  </body>
 </html>
