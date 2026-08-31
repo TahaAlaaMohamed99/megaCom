@@ -22,11 +22,11 @@
   width: 100%;
   max-width: 1240px;
   margin-inline: auto;
-  padding-inline: var(--space-md);
   box-sizing: border-box;
 
-  padding:
-    var(--space-xxl) 0;
+  padding-block:
+    var(--space-xxl);
+  padding-inline: var(--space-md);
 
   display: grid;
 
@@ -135,7 +135,6 @@
 
     border-color: rgba(255, 255, 255, 0.2);
 
-    transform: translateY(-2px);
   }
 
   &:focus-visible {
@@ -377,11 +376,11 @@
 
 @media (max-width: 600px) {
   .footer-container {
-    width:
-      calc(100% - (var(--space-md) * 2));
 
-    padding:
-      var(--space-xl) 0;
+
+    padding-block:
+      var(--space-xl);
+
 
     grid-template-columns: 1fr;
 
