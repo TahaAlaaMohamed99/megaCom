@@ -41,7 +41,6 @@
               </div>
               <div class="contact-info-body">
                 <h4>Call Us Directly</h4>
-                <p>Speak to our consultation team:</p>
                 <a href="tel:+201285011660">+20 128 501 1660</a>
               </div>
             </div>
@@ -55,7 +54,6 @@
               </div>
               <div class="contact-info-body">
                 <h4>Email Us Directly</h4>
-                <p>For inquiries, partnerships, and RFPs:</p>
                 <a href="mailto:info@megacom-int.com">info@megacom-int.com</a>
               </div>
             </div>
@@ -70,7 +68,6 @@
               <div class="contact-info-body">
                 <h4>Headquarters</h4>
                 <p>Cairo, Egypt</p>
-                <p style="font-size: 0.85rem; color: #94a3b8;">Serving clients across the MENA region</p>
               </div>
             </div>
 
@@ -118,18 +115,7 @@
                   <input type="text" id="company" name="company" placeholder="e.g. Acme Enterprise" />
                 </div>
 
-                <div class="form-group full-width">
-                  <label for="service">Interested Service</label>
-                  <select id="service" name="service">
-                    <option value="" disabled selected>Select a Service Area</option>
-                    <option value="Business Consultation">Business Management & Consultation</option>
-                    <option value="IT Consultation">IT Consultation & Automation</option>
-                    <option value="Governmental Services">Governmental Services & EGRP</option>
-                    <option value="Human Capital">Human Capital & OD</option>
-                    <option value="Lean Manufacturing">Lean Manufacturing & Quality</option>
-                    <option value="General Inquiry">Other Inquiry</option>
-                  </select>
-                </div>
+
 
                 <div class="form-group full-width">
                   <label for="message">Message *</label>
@@ -174,24 +160,64 @@
       const submitBtn = document.getElementById('submit-btn');
 
       if (contactForm) {
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const companyInput = document.getElementById('company');
+        const messageInput = document.getElementById('message');
+
+        const inputs = [fullNameInput, emailInput, phoneInput, companyInput, messageInput];
+        inputs.forEach(input => {
+          if (input) {
+            input.addEventListener('input', () => input.classList.remove('is-invalid'));
+          }
+        });
+
         contactForm.addEventListener('submit', async (e) => {
           e.preventDefault();
 
-          // Simple Form Validation
-          const fullName = document.getElementById('fullName').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const message = document.getElementById('message').value.trim();
+          inputs.forEach(input => input && input.classList.remove('is-invalid'));
 
-          if (!fullName || !email || !message) {
-            errorAlert.innerText = 'Please fill out all required fields (*).';
-            errorAlert.style.display = 'block';
+          const fullName = fullNameInput.value.trim();
+          const email = emailInput.value.trim();
+          const phone = phoneInput.value.trim();
+          const company = companyInput.value.trim();
+          const message = messageInput.value.trim();
+
+          let hasError = false;
+
+          if (!fullName) {
+            fullNameInput.classList.add('is-invalid');
+            hasError = true;
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email || !emailRegex.test(email)) {
+            emailInput.classList.add('is-invalid');
+            hasError = true;
+          }
+
+          if (!message) {
+            messageInput.classList.add('is-invalid');
+            hasError = true;
+          }
+
+          if (hasError) {
+            errorAlert.style.display = 'none';
             successAlert.style.display = 'none';
+            const firstInvalid = contactForm.querySelector('.is-invalid');
+            if (firstInvalid) firstInvalid.focus();
             return;
           }
 
-          // Gather form data as JSON payload
-          const formData = new FormData(contactForm);
-          const payload = Object.fromEntries(formData.entries());
+          // Build JSON payload for backend API
+          const payload = {
+            name: fullName,
+            email: email,
+            phoneNumber: phone,
+            company: company,
+            message: message
+          };
 
           // Show Loading state on button
           submitBtn.disabled = true;
@@ -202,13 +228,8 @@
           errorAlert.style.display = 'none';
 
           try {
-            /**
-             * BACKEND API INTEGRATION POINT:
-             * Tomorrow, update API_ENDPOINT with the real backend API URL.
-             */
-            const API_ENDPOINT = '/api/contact'; // Replace with real URL tomorrow
+            const API_ENDPOINT = 'https://www.megahrnext.com/mobile-api/Auth/Contact-Us';
 
-            /*
             const response = await fetch(API_ENDPOINT, {
               method: 'POST',
               headers: {
@@ -219,19 +240,17 @@
             });
 
             if (!response.ok) {
-              throw new Error('Failed to submit form');
+              const errData = await response.json().catch(() => null);
+              const errMsg = (errData && (errData.message || errData.title)) || 'Failed to submit form';
+              throw new Error(errMsg);
             }
-            */
-
-            // Temporary simulation until API endpoint URL is provided tomorrow
-            await new Promise((resolve) => setTimeout(resolve, 800));
 
             // Show Success Notification
             successAlert.style.display = 'block';
             contactForm.reset();
           } catch (err) {
             console.error('Contact Form Error:', err);
-            errorAlert.innerText = 'Unable to send message right now. Please try again later or email info@megacom-int.com.';
+            errorAlert.innerText = 'Unable to send message right now. Please try again later or contact us directly at +20 128 501 1660.';
             errorAlert.style.display = 'block';
           } finally {
             submitBtn.disabled = false;

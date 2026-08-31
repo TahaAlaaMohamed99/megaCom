@@ -3099,6 +3099,11 @@ a.card,
   border-color: var(--color-primary, #2A3B99);
   box-shadow: 0 0 0 4px rgba(42, 59, 153, 0.12);
 }
+.form-group input.is-invalid, .form-group select.is-invalid, .form-group textarea.is-invalid {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
 .form-group input::-moz-placeholder, .form-group select::-moz-placeholder, .form-group textarea::-moz-placeholder {
   color: #94a3b8;
 }
