@@ -1,0 +1,2 @@
+# Netlify Proxy Rules to bypass CORS
+/mobile-api/*  https://www.megahrnext.com/mobile-api/:splat  200!

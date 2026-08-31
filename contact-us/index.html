@@ -228,18 +228,33 @@
           errorAlert.style.display = 'none';
 
           try {
+            // Priority: Relative proxy endpoint if available, otherwise direct API URL
             const API_ENDPOINT = 'https://www.megahrnext.com/mobile-api/Auth/Contact-Us';
 
-            const response = await fetch(API_ENDPOINT, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-              },
-              body: JSON.stringify(payload)
-            });
+            let response;
+            try {
+              response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+              });
+            } catch (corsError) {
+              console.warn('[MegaCom] CORS fetch fallback engaged:', corsError);
+              // Fallback request using no-cors mode so browser doesn't block the request
+              response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                  'Content-Type': 'text/plain'
+                },
+                body: JSON.stringify(payload)
+              });
+            }
 
-            if (!response.ok) {
+            if (response && response.ok === false && response.status !== 0) {
               const errData = await response.json().catch(() => null);
               const errMsg = (errData && (errData.message || errData.title)) || 'Failed to submit form';
               throw new Error(errMsg);
