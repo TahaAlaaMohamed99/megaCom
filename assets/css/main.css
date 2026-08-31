@@ -2150,6 +2150,11 @@ ul.list--default a:hover,
   margin-bottom: var(--space-xxl);
 }
 
+@media (max-width: 768px) {
+  .list--features {
+    grid-template-columns: 1fr;
+  }
+}
 /* ========================================
    List Item
 ======================================== */
@@ -2424,6 +2429,12 @@ ul.list--default a:hover,
   margin-top: var(--space-xl);
 }
 
+@media (max-width: 768px) {
+  .team-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .team-card {
   display: flex;
   flex-direction: column;
