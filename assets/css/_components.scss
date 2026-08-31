@@ -877,3 +877,26 @@ ul.list--default a:hover,
 [data-theme="dark"] .team-card__photo {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
+
+.clients-image-card {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-xxl);
+}
+
+.clients-showcase-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}

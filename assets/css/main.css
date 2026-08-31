@@ -3727,4 +3727,27 @@ table.dataframe tbody td:last-child {
 [data-theme=dark] .cell-beneficiary,
 [data-theme=dark] .cell-scope {
   color: #cbd5e1;
+}
+
+.clients-image-card {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-xxl);
+}
+
+.clients-showcase-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  object-fit: contain;
 }/*# sourceMappingURL=main.css.map */
