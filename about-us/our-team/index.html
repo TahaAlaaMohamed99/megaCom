@@ -1,40 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Team | MegaCom</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-  <div id="navbar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team | MegaCom</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+      /* Team section — scoped, uses existing design tokens from main.css */
+      .team-grid {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-lg);
+        margin-top: var(--space-xl);
+      }
 
-  <main class="page">
-    <header class="page-header">
+      .team-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 220px;
+
+        padding: var(--space-lg) var(--space-md);
+        background: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          border-color 160ms ease;
+      }
+      .team-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--color-primary);
+        box-shadow: var(--shadow-md);
+      }
+
+      .team-card__photo {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--color-primary-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: var(--space-sm);
+        border: 3px solid var(--color-surface);
+        box-shadow: 0 0 0 1px var(--color-border);
+      }
+      .team-card__photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .team-card__name {
+        margin: 0 0 4px;
+        color: var(--color-text-primary);
+        font-family: var(--font-family);
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+      }
+
+      .team-card__role {
+        margin: 0 0 var(--space-sm);
+        color: var(--color-primary);
+        font-size: var(--font-size-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .team-card__email {
+        color: var(--color-text-secondary);
+        font-size: var(--font-size-sm);
+        text-decoration: none;
+        word-break: break-all;
+        transition: color 150ms ease;
+      }
+      .team-card__email:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 992px) {
+        .team-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      [data-theme="dark"] .team-card__photo {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <main class="page">
+      <header class="page-header">
+        <div class="container">
+          <h1 class="title">Our Team</h1>
+          <nav class="breadcrumb" aria-label="Breadcrumbs">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="/">Home</a></li>
+              <li class="breadcrumb__item">
+                <a href="/about-us/">About Us</a>
+              </li>
+              <li class="breadcrumb__item active" aria-current="page">
+                Our Team
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </header>
+
       <div class="container">
-        <h1 class="title">Our Team</h1>
-        <nav class="breadcrumb" aria-label="Breadcrumbs">
-          <ol class="breadcrumb__list">
-            <li class="breadcrumb__item"><a href="/">Home</a></li>
-            <li class="breadcrumb__item"><a href="/about-us/">About Us</a></li>
-            <li class="breadcrumb__item active" aria-current="page">Our Team</li>
-          </ol>
-        </nav>
+        <section class="section">
+          <h2 class="title title--card">Meet Our Team</h2>
+          <p class="des">
+            Megacom has engaged the activities of highly qualified professionals
+            who possess proven track records of experience in each field we
+            provide consultation for.
+          </p>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-card__photo">
+                <img src="/assets/images/EGRP.jpeg" alt="Tarek Thabet" />
+              </div>
+              <h3 class="team-card__name">Tarek Thabet</h3>
+              <p class="team-card__role">Chairman</p>
+              <a class="team-card__email" href="mailto:tthabet@megacom-int.com"
+                >tthabet@megacom-int.com</a
+              >
+            </article>
+          </div>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-card__photo">
+                <img src="/assets/images/Consultation.jpeg" alt="Gamal Zaki" />
+              </div>
+              <h3 class="team-card__name">Gamal Zaki</h3>
+              <p class="team-card__role">Projects Director</p>
+              <a class="team-card__email" href="mailto:gzaki@megacom-int.com"
+                >gzaki@megacom-int.com</a
+              >
+            </article>
+
+            <article class="team-card">
+              <div class="team-card__photo">
+                <img
+                  src="/assets/images/Business-Consultation.jpeg"
+                  alt="Ashraf Aseem"
+                />
+              </div>
+              <h3 class="team-card__name">Ashraf Aseem</h3>
+              <p class="team-card__role">Technical Director</p>
+              <a class="team-card__email" href="mailto:aaseem@megacom-int.com"
+                >aaseem@megacom-int.com</a
+              >
+            </article>
+          </div>
+        </section>
       </div>
-    </header>
+    </main>
 
-    <div class="container">
-      <section class="section">
-        <h2 class="title title--card">Meet Our Team</h2>
-        <p class="des">
-          Megacom has engaged the activities of highly qualified professionals who possess proven track records of experience in each field we provide consultation for.
-        </p>
-      </section>
-    </div>
-  </main>
+    <div id="footer"></div>
 
-  <div id="footer"></div>
-
-  <script src="/assets/js/components.js"></script>
-</body>
+    <script src="/assets/js/components.js"></script>
+  </body>
 </html>
