@@ -1246,7 +1246,7 @@ body.nav-scroll-locked {
 .hero-slide-container {
   position: relative;
   z-index: 1;
-  width: min(100% - var(--space-lg) * 2, 1280px);
+  max-width: 1240px;
   margin-inline: auto;
 }
 
