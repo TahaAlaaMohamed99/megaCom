@@ -472,13 +472,14 @@ ul.list--default a:hover,
 
 .list-item--feature {
   padding: var(--space-lg);
-
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: var(--shadow-sm);
-
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
@@ -495,6 +496,11 @@ ul.list--default a:hover,
 .list-item__title {
   margin: 0 0 var(--space-xs);
   color: var(--color-primary);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .list-item__description {
