@@ -466,6 +466,12 @@ ul.list--default a:hover,
   margin-bottom: var(--space-xxl);
 }
 
+@media (max-width: 768px) {
+  .list--features {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========================================
    List Item
 ======================================== */
@@ -487,7 +493,6 @@ ul.list--default a:hover,
 }
 
 .list-item--feature:hover {
-
   border-color: var(--color-primary);
 
   box-shadow: var(--shadow-md);
@@ -772,6 +777,13 @@ ul.list--default a:hover,
   justify-content: center;
   gap: var(--space-lg);
   margin-top: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .team-flex {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .team-card {
