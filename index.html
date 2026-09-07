@@ -121,85 +121,348 @@
       <div class="hero-slider-dots swiper-pagination"></div>
     </section>
 
-    <section class="services-section">
+    <!-- Stats Counter Bar -->
+    <section class="hero-stats-bar">
+      <div class="container">
+        <div class="hero-stats-grid">
+
+          <!-- Stat 01: Years of Experience -->
+          <div class="hero-stat-item">
+            <div class="hero-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <polyline points="9 16 11 18 15 14"></polyline>
+              </svg>
+            </div>
+            <div class="hero-stat-info">
+              <div class="hero-stat-number" data-target="29" data-suffix="+">29+</div>
+              <div class="hero-stat-label">Years of Experience</div>
+            </div>
+          </div>
+
+          <!-- Stat 02: Consulting Projects -->
+          <div class="hero-stat-item">
+            <div class="hero-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                <path d="M2 13h5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2h5"></path>
+              </svg>
+            </div>
+            <div class="hero-stat-info">
+              <div class="hero-stat-number" data-target="400" data-suffix="+">400+</div>
+              <div class="hero-stat-label">Consulting Projects</div>
+            </div>
+          </div>
+
+          <!-- Stat 03: Egyptian Experts -->
+          <div class="hero-stat-item">
+            <div class="hero-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="hero-stat-info">
+              <div class="hero-stat-number" data-target="300" data-suffix="+">300+</div>
+              <div class="hero-stat-label">Egyptian Experts</div>
+            </div>
+          </div>
+
+          <!-- Stat 04: International Experts -->
+          <div class="hero-stat-item">
+            <div class="hero-stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+              </svg>
+            </div>
+            <div class="hero-stat-info">
+              <div class="hero-stat-number" data-target="70" data-suffix="+">70+</div>
+              <div class="hero-stat-label">International Experts</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section: Strategic Solutions
+    ============================================================ -->
+    <section class="home-solutions-section">
       <div class="container">
 
+        <!-- Section Header Row -->
+        <div class="section-header-row">
+          <div class="section-header-info">
+            <h2 class="section-title-main">Impact-Driven Solutions Across Sectors</h2>
+            <p class="section-desc-main">
+              Multidisciplinary consulting frameworks tailored to empower governmental ministries, corporate enterprises, and digital organizations.
+            </p>
+          </div>
+          <div class="section-header-action">
+            <a href="/solutions/" class="section-action-link">
+              <span>View All Solutions</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
 
-        <div class="services-grid">
-          <!-- Card 01: About Us -->
-          <a href="/about-us/" class="service-card">
-            <div class="service-card-top">
-              <span class="service-number">01</span>
+        <!-- 3 Solution Cards Grid -->
+        <div class="solutions-three-grid">
 
+          <!-- Card 01: Government Sector -->
+          <a href="/government/" class="solution-detail-card">
+            <div class="sol-card-media">
+              <img src="/assets/images/Government.jpeg" alt="Government Sector" loading="lazy" decoding="async" />
+              <div class="sol-card-overlay"></div>
+              <span class="sol-card-badge">Pillar 01</span>
+              <h3 class="sol-card-header-title">Government Sector</h3>
             </div>
-            <div class="service-card-body">
-              <h3>About Us</h3>
-              <p>
-                Discover Megacom's legacy of strategic consultation, institutional development, and our commitment to
-                driving sustainable corporate and public sector growth.
+            <div class="sol-card-body">
+              <p class="sol-card-desc">
+                Institutional development, public policy reform, and civil service capacity building for ministries and international developmental agencies.
               </p>
-            </div>
-            <div class="service-card-footer">
-              <span class="service-link">
-                Learn More
-                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+              <h4 class="sol-subservices-title">Key Capabilities</h4>
+              <ul class="sol-subservices-list">
+                <li>
+                  <div class="sol-item-text">
+                    <strong>National Studies &amp; Research</strong>
+                    <span>Socio-economic research and regulatory impact assessments.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Institutional Development</strong>
+                    <span>Governance frameworks and civil service restructuring.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Business Process Mapping</strong>
+                    <span>Workflow re-engineering and administrative automation blueprints.</span>
+                  </div>
+                </li>
+              </ul>
+              <span class="sol-card-btn">
+                Explore Government Sector &rarr;
               </span>
             </div>
           </a>
 
-          <!-- Card 02: Our Services -->
-          <a href="/our-service/" class="service-card">
-            <div class="service-card-top">
-              <span class="service-number">02</span>
-
+          <!-- Card 02: Private Sector -->
+          <a href="/private-sector/business-consultation/" class="solution-detail-card">
+            <div class="sol-card-media">
+              <img src="/assets/images/Private-Sector.jpeg" alt="Private Sector" loading="lazy" decoding="async" />
+              <div class="sol-card-overlay"></div>
+              <span class="sol-card-badge">Pillar 02</span>
+              <h3 class="sol-card-header-title">Private Sector</h3>
             </div>
-            <div class="service-card-body">
-              <h3>Our Services</h3>
-              <p>
-                Comprehensive business consultation, strategic management, human capital development, quality systems,
-                and specialized enterprise IT consultancy.
+            <div class="sol-card-body">
+              <p class="sol-card-desc">
+                Executive business consulting, strategic planning, human capital development, lean manufacturing, and operational excellence for corporations.
               </p>
-            </div>
-            <div class="service-card-footer">
-              <span class="service-link">
-                Learn More
-                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+              <h4 class="sol-subservices-title">Key Capabilities</h4>
+              <ul class="sol-subservices-list">
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Strategic Planning</strong>
+                    <span>Corporate vision formulation, market positioning, and growth roadmaps.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Human Capital &amp; OD</strong>
+                    <span>Grading systems, salary structures, and performance appraisal.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Lean Manufacturing &amp; Quality</strong>
+                    <span>Production optimization, waste reduction, and Six Sigma systems.</span>
+                  </div>
+                </li>
+              </ul>
+              <span class="sol-card-btn">
+                Explore Business Consultation &rarr;
               </span>
             </div>
           </a>
 
-          <!-- Card 03: Success Stories -->
-          <a href="/success-stories/" class="service-card">
-            <div class="service-card-top">
-              <span class="service-number">03</span>
-
+          <!-- Card 03: IT Consultation -->
+          <a href="/private-sector/it-consultation/" class="solution-detail-card">
+            <div class="sol-card-media">
+              <img src="/assets/images/IT_Consultatio.jpeg" alt="IT Consultation" loading="lazy" decoding="async" />
+              <div class="sol-card-overlay"></div>
+              <span class="sol-card-badge">Pillar 03</span>
+              <h3 class="sol-card-header-title">IT Consultation</h3>
             </div>
-            <div class="service-card-body">
-              <h3>Success Stories</h3>
-              <p>
-                Explore our national studies, regulatory reform frameworks, and successful private and public sector
-                transformations across diverse industries.
+            <div class="sol-card-body">
+              <p class="sol-card-desc">
+                Bridging corporate strategy and digital transformation with IT architecture audits, enterprise software evaluation, and next-gen cloud roadmaps.
               </p>
-            </div>
-            <div class="service-card-footer">
-              <span class="service-link">
-                Learn More
-                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+              <h4 class="sol-subservices-title">Key Capabilities</h4>
+              <ul class="sol-subservices-list">
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Enterprise IT Audits</strong>
+                    <span>System readiness assessments, architecture audits, and RFP formulation.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="sol-item-text">
+                    <strong>ERP &amp; Automation Advisory</strong>
+                    <span>Process automation blueprints and ERP vendor evaluation.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="sol-item-text">
+                    <strong>Digital Transformation</strong>
+                    <span>Digital governance frameworks and modern cloud integration.</span>
+                  </div>
+                </li>
+              </ul>
+              <span class="sol-card-btn">
+                Explore IT Consultation &rarr;
               </span>
             </div>
           </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section: Software Ecosystem
+    ============================================================ -->
+    <section class="home-software-section">
+      <div class="container">
+
+        <!-- Section Header Row -->
+        <div class="section-header-row">
+          <div class="section-header-info">
+            <h2 class="section-title-main">Flagship Cloud &amp; Enterprise Platforms</h2>
+            <p class="section-desc-main">
+              Purpose-built digital products engineered to automate HR workflows, power corporate self-service, and manage state-level governmental resources.
+            </p>
+          </div>
+          <div class="section-header-action">
+            <a href="/our-service/software/" class="section-action-link">
+              <span>View All Software</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Software Cards Grid -->
+        <div class="software-cards-grid">
+
+          <!-- Card 01: MegaHR NEXT (First Card) -->
+          <a href="https://mega-hr-next.vercel.app/" target="_blank" rel="noopener noreferrer" class="software-product-card">
+            <div class="software-card-media-full">
+              <img src="/assets/images/megahr-next-dashboard.png" class="media-screen" alt="MegaHR NEXT Vacation Dashboard" loading="lazy" decoding="async" />
+              <img src="/assets/images/megahr-next-mobile.png" class="media-phone-float" alt="MegaHR NEXT Mobile App" loading="lazy" decoding="async" />
+            </div>
+            <div class="software-card-content">
+              <div class="software-card-header">
+                <h3 class="software-card-title">MegaHR NEXT</h3>
+                <p class="software-card-subtitle">All-in-One Cloud HR Platform for Growing Teams</p>
+              </div>
+              <ul class="software-feature-list">
+                <li><span>360° Digital Employee Profiles</span></li>
+                <li><span>Attendance &amp; Live Check-In / Out Tracking</span></li>
+                <li><span>Leave, Vacations &amp; Partial Day Requests</span></li>
+                <li><span>Payroll, Workflows &amp; Self-Service (ESS)</span></li>
+              </ul>
+              <span class="software-card-btn">
+                Launch MegaHR NEXT &rarr;
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 02: MegaHR Enterprise -->
+          <a href="/our-service/software/megahr-enterprise/" class="software-product-card">
+            <div class="software-card-media-full">
+              <img src="/assets/images/software-megahr-enterprise.jpg" class="media-screen" alt="MegaHR Enterprise" loading="lazy" decoding="async" />
+            </div>
+            <div class="software-card-content">
+              <div class="software-card-header">
+                <h3 class="software-card-title">MegaHR Enterprise</h3>
+                <p class="software-card-subtitle">Enterprise HR &amp; Payroll Solutions for Large Corporations</p>
+              </div>
+              <ul class="software-feature-list">
+                <li><span>Core HR &amp; Digital Personnel Archiving</span></li>
+                <li><span>Automated Payroll &amp; Tax Compliance</span></li>
+                <li><span>Biometric Attendance &amp; Shift Scheduling</span></li>
+                <li><span>Performance Appraisals &amp; Leadership KPIs</span></li>
+              </ul>
+              <span class="software-card-btn">
+                Explore MegaHR Enterprise &rarr;
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 03: EGRP v2.0 -->
+          <a href="/our-service/software/egrp-v2-0/" class="software-product-card">
+            <div class="software-card-media-full">
+              <img src="/assets/images/software-egrp.jpg" class="media-screen" alt="EGRP v2.0 Government ERP" loading="lazy" decoding="async" />
+            </div>
+            <div class="software-card-content">
+              <div class="software-card-header">
+                <h3 class="software-card-title">EGRP v2.0</h3>
+                <p class="software-card-subtitle">Egyptian Governmental Resource Planning on Dynamics AX</p>
+              </div>
+              <ul class="software-feature-list">
+                <li><span>State Budgeting &amp; Chapters Allocation</span></li>
+                <li><span>Public Procurement &amp; Tendering Compliance</span></li>
+                <li><span>Governmental Warehousing (Book 224 &amp; 50 GA)</span></li>
+                <li><span>Ministry of Finance Accounting &amp; Form 132</span></li>
+              </ul>
+              <span class="software-card-btn">
+                Explore EGRP v2.0 &rarr;
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consultation Banner / CTA -->
+    <section class="section" style="padding: 4rem 0 5rem;">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #18225c 0%, #2a3b99 100%); border-radius: 20px; padding: 3rem 2.5rem; color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; box-shadow: 0 20px 40px -15px rgba(24, 34, 92, 0.35);">
+          <div style="max-width: 620px;">
+            <h3 style="font-size: 1.65rem; font-weight: 800; margin: 0 0 10px 0; color: #ffffff;">Ready to Transform Your Organization?</h3>
+            <p style="margin: 0; color: rgba(255, 255, 255, 0.85); font-size: 1rem; line-height: 1.6;">
+              Partner with MegaCom’s expert consultants to develop strategic roadmaps, optimize institutional performance, or schedule a live software demonstration.
+            </p>
+          </div>
+          <div>
+            <a href="/contact-us/" class="hero-btn hero-btn-primary" style="background: #ffffff; color: var(--color-primary); font-weight: 700; border-color: #ffffff; padding: 12px 28px;">
+              Contact Our Advisors &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -393,7 +393,6 @@ a.card,
 }
 
 .luxury-card:hover {
-  transform: translateY(-6px);
   box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
   border-color: rgba(0, 86, 179, 0.25);
 }
@@ -815,7 +814,6 @@ a.card,
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 
   &:hover {
-    transform: translateY(-6px);
     box-shadow: 0 20px 40px -12px rgba(42, 59, 153, 0.15), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
     border-color: rgba(42, 59, 153, 0.25);
 
@@ -945,6 +943,7 @@ a.card,
           font-weight: 700;
           display: block;
         }
+
         span {
           color: var(--color-text-secondary);
           font-size: 0.82rem;
@@ -976,4 +975,161 @@ a.card,
       transform: translateY(-2px);
     }
   }
-}
+}
+
+// Dot bullets fallback when no icons are present in sol-subservices-list
+.solution-detail-card .sol-subservices-list li:not(:has(i))::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  margin-top: 6px;
+}
+
+// ============================================================
+// Homepage Solutions & Software Sections Header Styling
+// ============================================================
+
+.home-solutions-section {
+  padding: 5rem 0 5.5rem;
+  background: #ffffff;
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  position: relative;
+}
+
+.home-software-section {
+  padding: 5rem 0 5.5rem;
+  background: #f8fafd;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  position: relative;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.section-header-info {
+  max-width: 680px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(42, 59, 153, 0.08);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 99px;
+  margin-bottom: 10px;
+}
+
+.section-title-main {
+  font-size: clamp(1.85rem, 3vw, 2.35rem);
+  font-weight: 800;
+  color: #18225c;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+.section-desc-main {
+  font-size: 1rem;
+  color: #5c6270;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.section-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid rgba(42, 59, 153, 0.22);
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: all 200ms ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    transform: translateX(3px);
+    box-shadow: 0 6px 16px rgba(42, 59, 153, 0.2);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+
+  svg {
+    transition: transform 200ms ease;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .home-solutions-section,
+  .home-software-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .section-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+}
+
+[data-theme="dark"] {
+  .home-solutions-section {
+    background: #0b1126;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .home-software-section {
+    background: #080e22;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .section-title-main {
+    color: #ffffff;
+  }
+
+  .section-desc-main {
+    color: #94a3b8;
+  }
+
+  .section-eyebrow {
+    background: rgba(42, 59, 153, 0.3);
+    color: #93c5fd;
+  }
+
+  .section-action-link {
+    background: rgba(255, 255, 255, 0.05);
+    color: #93c5fd;
+    border-color: rgba(255, 255, 255, 0.15);
+
+    &:hover {
+      background: var(--color-primary);
+      color: #ffffff;
+      border-color: var(--color-primary);
+    }
+  }
+}

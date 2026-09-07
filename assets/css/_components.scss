@@ -806,7 +806,6 @@ ul.list--default a:hover,
 }
 
 .team-card:hover {
-  transform: translateY(-4px);
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);
 }
@@ -899,4 +898,410 @@ ul.list--default a:hover,
   display: block;
   border-radius: var(--radius-md);
   object-fit: contain;
+}
+
+/* ============================================================
+   Hero Stats Counter Bar
+============================================================ */
+
+.hero-stats-bar {
+  background: #ffffff;
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+
+  .hero-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+  }
+
+  .hero-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2.25rem 1.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      inset-inline-end: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(226, 232, 240, 0.9);
+    }
+  }
+
+  &.is-visible {
+    .hero-stat-item {
+      opacity: 1;
+      transform: translateY(0);
+
+      &:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 0.18s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.31s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.44s;
+      }
+
+      &:hover {
+        transition-delay: 0s;
+        transition-duration: 200ms;
+      }
+    }
+  }
+
+  .hero-stat-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 50%;
+    background: #edf5fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #18225c;
+    box-shadow: 0 4px 14px rgba(42, 59, 153, 0.06);
+    transition: transform 220ms ease, background-color 220ms ease;
+
+    svg {
+      display: block;
+      color: #18225c;
+    }
+  }
+
+  .hero-stat-item:hover .hero-stat-icon {
+    transform: scale(1.06);
+    background: #e1effe;
+  }
+
+  .hero-stat-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-stat-number {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #18225c;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-stat-label {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: #5c6270;
+    margin-top: 4px;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-stats-bar {
+    .hero-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-stat-item {
+      padding: 1.75rem 1.25rem;
+
+      &:nth-child(2n)::after {
+        display: none;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      }
+    }
+
+    .hero-stat-label {
+      white-space: normal;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-stats-bar {
+    .hero-stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stat-item {
+      padding: 1.25rem 1rem;
+
+      &::after {
+        display: none !important;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+      }
+    }
+
+    .hero-stat-number {
+      font-size: 1.85rem;
+    }
+  }
+}
+
+[data-theme="dark"] .hero-stats-bar {
+  background: #0f172a;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+
+  .hero-stat-item:not(:last-child)::after {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-stat-icon {
+    background: rgba(42, 59, 153, 0.25);
+    color: #93c5fd;
+
+    svg {
+      color: #93c5fd;
+    }
+  }
+
+  .hero-stat-number {
+    color: #ffffff;
+  }
+
+  .hero-stat-label {
+    color: #94a3b8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stats-bar .hero-stat-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   Software Product Cards (Sleek Three-Card Layout with Full-Width Media)
+============================================================ */
+
+.software-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+  align-items: stretch;
+}
+
+.software-product-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.07), 0 2px 6px 0 rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 240ms ease, border-color 240ms ease;
+
+  &:hover {
+    box-shadow: 0 22px 45px -12px rgba(12, 36, 97, 0.16), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+    border-color: rgba(12, 36, 97, 0.25);
+
+    .software-card-media-full img.media-screen {
+      transform: scale(1.04);
+    }
+
+    .software-card-media-full img.media-phone-float {
+      transform: scale(1.03);
+    }
+
+    .software-card-btn {
+      background: #18225c;
+      box-shadow: 0 6px 18px rgba(12, 36, 97, 0.25);
+    }
+  }
+
+  .software-card-media-full {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #f1f5f9;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+
+    img.media-screen {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 350ms ease;
+    }
+
+    img.media-phone-float {
+      position: absolute;
+      right: 14px;
+      bottom: -15px;
+      height: 180px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 25px rgba(15, 23, 42, 0.35));
+      transition: transform 300ms ease;
+      z-index: 2;
+    }
+  }
+
+  .software-card-content {
+    padding: 1.75rem 1.65rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .software-card-header {
+    margin-bottom: 1.25rem;
+
+    .software-card-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #edf5fe;
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 99px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .software-card-title {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: #18225c;
+      margin: 0 0 0.4rem 0;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .software-card-subtitle {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+      font-weight: 500;
+      min-height: 44px;
+    }
+  }
+
+  .software-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+      line-height: 1.4;
+
+      &::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        min-width: 7px;
+        border-radius: 50%;
+        background: #38bdf8;
+      }
+    }
+  }
+
+  .software-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    background: #0c2461;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 0.925rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: auto;
+    transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  }
+}
+
+@media (max-width: 1100px) {
+  .software-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .software-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .software-product-card .software-card-header .software-card-subtitle {
+    min-height: auto;
+  }
+}
+
+[data-theme="dark"] .software-product-card {
+  background: #111a45;
+  border-color: rgba(255, 255, 255, 0.08);
+
+  .software-card-media-full {
+    background: #0d1538;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .software-card-header .software-card-badge {
+    background: rgba(42, 59, 153, 0.3);
+    color: #93c5fd;
+  }
+
+  .software-card-header .software-card-title {
+    color: #ffffff;
+  }
+
+  .software-card-header .software-card-subtitle {
+    color: #94a3b8;
+  }
+
+  .software-feature-list li {
+    color: #e2e8f0;
+  }
 }

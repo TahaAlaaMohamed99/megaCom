@@ -513,3 +513,89 @@ document.addEventListener("DOMContentLoaded", () => {
     grabCursor: true,
   });
 });
+
+// ============================================================
+// Hero Stats Counter Animation (Triggers on Scroll View)
+// ============================================================
+
+function initHeroStatsCounter() {
+  const statsSection = document.querySelector(".hero-stats-bar");
+  if (!statsSection) return;
+
+  const statNumbers = statsSection.querySelectorAll(".hero-stat-number");
+  if (!statNumbers.length) return;
+
+  // Extract targets and suffixes
+  const items = Array.from(statNumbers).map((el) => {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^(\d+)(.*)$/);
+    const target = el.dataset.target ? parseInt(el.dataset.target, 10) : (match ? parseInt(match[1], 10) : 0);
+    const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : (match ? match[2] : "+");
+    el.textContent = "0" + suffix;
+    return { el, target, suffix };
+  });
+
+  let hasAnimated = false;
+
+  function startCounter() {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    // Trigger visual cascade reveal
+    statsSection.classList.add("is-visible");
+
+    // Smooth count-up animation
+    const duration = 1800; // 1.8 seconds
+    let startTime = null;
+
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    function animate(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+
+      items.forEach(({ el, target, suffix }) => {
+        const current = Math.floor(eased * target);
+        el.textContent = current + suffix;
+      });
+
+      if (progress < 1) {
+        window.requestAnimationFrame(animate);
+      } else {
+        items.forEach(({ el, target, suffix }) => {
+          el.textContent = target + suffix;
+        });
+      }
+    }
+
+    window.requestAnimationFrame(animate);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounter();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -30px 0px"
+      }
+    );
+    observer.observe(statsSection);
+  } else {
+    startCounter();
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initHeroStatsCounter);
+} else {
+  initHeroStatsCounter();
+}
