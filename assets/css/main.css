@@ -2874,6 +2874,322 @@ ul.list--default a:hover,
   color: #e2e8f0;
 }
 
+/* ============================================================
+   Home: Who Are We Section
+============================================================ */
+.home-who-section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+.home-who-section .home-who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+.home-who-section .home-who-media {
+  position: relative;
+}
+.home-who-section .home-who-media .home-who-img-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -15px rgba(24, 36, 99, 0.22);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+.home-who-section .home-who-media .home-who-img-wrap img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+.home-who-section .home-who-media .home-who-img-wrap:hover img {
+  transform: scale(1.03);
+}
+.home-who-section .home-who-media .home-who-floating-badge {
+  position: absolute;
+  bottom: -20px;
+  inset-inline-end: -20px;
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(24, 36, 99, 0.18);
+  border: 1px solid rgba(42, 59, 153, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 2;
+}
+.home-who-section .home-who-media .home-who-floating-badge .badge-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.home-who-section .home-who-media .home-who-floating-badge .badge-text strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  font-weight: 800;
+}
+.home-who-section .home-who-media .home-who-floating-badge .badge-text span {
+  font-size: 0.825rem;
+  color: var(--color-secondary);
+}
+.home-who-section .home-who-content .section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--color-primary-light, #e4e8f8);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+.home-who-section .home-who-content .who-title {
+  font-size: clamp(1.85rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.02em;
+}
+.home-who-section .home-who-content .who-desc {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0 0 1.25rem 0;
+}
+.home-who-section .home-who-content .who-pillars-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1rem;
+  margin: 1.75rem 0 2rem 0;
+}
+.home-who-section .home-who-content .who-pillars-list .who-pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.home-who-section .home-who-content .who-pillars-list .who-pillar-item .pillar-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.home-who-section .home-who-content .who-pillars-list .who-pillar-item .pillar-info strong {
+  font-size: 0.925rem;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: 2px;
+}
+.home-who-section .home-who-content .who-pillars-list .who-pillar-item .pillar-info span {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+.home-who-section .home-who-content .who-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Home: Why MegaCom Section (Clean & Minimalist)
+============================================================ */
+.home-why-section {
+  padding: 5.5rem 0 5rem;
+  background: var(--color-background);
+  position: relative;
+}
+.home-why-section .why-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
+}
+.home-why-section .why-header .section-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: var(--color-primary-light, #e4e8f8);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.home-why-section .why-header .why-title {
+  font-size: clamp(1.85rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+.home-why-section .why-header .why-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+.home-why-section .why-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.home-why-section .why-cards-grid .why-card {
+  background: var(--color-card, #ffffff);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  position: relative;
+}
+.home-why-section .why-cards-grid .why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -8px rgba(24, 36, 99, 0.1);
+  border-color: var(--color-primary);
+}
+.home-why-section .why-cards-grid .why-card .why-card-num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+.home-why-section .why-cards-grid .why-card .why-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 0.85rem 0;
+  line-height: 1.35;
+}
+.home-why-section .why-cards-grid .why-card .why-card-text {
+  font-size: 0.925rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+[data-theme=dark] .home-who-section .home-who-floating-badge {
+  background: #111a45;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+[data-theme=dark] .home-who-section .home-who-floating-badge .badge-icon {
+  background: rgba(42, 59, 153, 0.35);
+  color: #93c5fd;
+}
+[data-theme=dark] .home-who-section .home-who-floating-badge .badge-text strong {
+  color: #ffffff;
+}
+[data-theme=dark] .home-who-section .home-who-floating-badge .badge-text span {
+  color: #94a3b8;
+}
+[data-theme=dark] .home-who-section .home-who-content .who-title {
+  color: #ffffff;
+}
+[data-theme=dark] .home-who-section .home-who-content .who-desc {
+  color: #94a3b8;
+}
+[data-theme=dark] .home-who-section .home-who-content .who-pillars-list .who-pillar-item .pillar-check {
+  background: rgba(42, 59, 153, 0.3);
+  color: #93c5fd;
+}
+[data-theme=dark] .home-who-section .home-who-content .who-pillars-list .who-pillar-item .pillar-info strong {
+  color: #ffffff;
+}
+[data-theme=dark] .home-who-section .home-who-content .who-pillars-list .who-pillar-item .pillar-info span {
+  color: #94a3b8;
+}
+[data-theme=dark] .home-why-section {
+  background: transparent;
+}
+[data-theme=dark] .home-why-section .why-header .why-title {
+  color: #ffffff;
+}
+[data-theme=dark] .home-why-section .why-header .why-desc {
+  color: #94a3b8;
+}
+[data-theme=dark] .home-why-section .why-cards-grid .why-card {
+  background: #111a45;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme=dark] .home-why-section .why-cards-grid .why-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 14px 28px -8px rgba(0, 0, 0, 0.4);
+}
+[data-theme=dark] .home-why-section .why-cards-grid .why-card .why-card-num {
+  color: #93c5fd;
+}
+[data-theme=dark] .home-why-section .why-cards-grid .why-card .why-card-title {
+  color: #ffffff;
+}
+[data-theme=dark] .home-why-section .why-cards-grid .why-card .why-card-text {
+  color: #94a3b8;
+}
+
+@media (max-width: 1024px) {
+  .home-who-section .home-who-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .home-who-section .home-who-media .home-who-floating-badge {
+    inset-inline-end: 20px;
+    bottom: -15px;
+  }
+  .home-why-section .why-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .home-who-section {
+    padding: 3.5rem 0;
+  }
+  .home-who-section .home-who-content .who-pillars-list {
+    grid-template-columns: 1fr;
+  }
+  .home-who-section .home-who-media .home-who-img-wrap img {
+    height: 320px;
+  }
+  .home-who-section .home-who-media .home-who-floating-badge {
+    position: static;
+    margin-top: 1rem;
+  }
+  .home-why-section {
+    padding: 3.5rem 0;
+  }
+  .home-why-section .why-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .home-why-section .why-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
 .services-section {
   padding-block: var(--space-xxxl);
   background: var(--color-background);
