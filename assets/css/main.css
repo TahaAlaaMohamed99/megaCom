@@ -762,7 +762,6 @@ body.nav-scroll-locked {
 }
 .mega-menu-promo-card .promo-btn:hover {
   background: var(--color-primary-dark);
-  transform: translateY(-1px);
 }
 
 .mobile-nav-header {
@@ -1800,9 +1799,7 @@ ul.list--default a,
   color: var(--color-primary, #0056b3);
   text-decoration: none;
   font-weight: var(--font-weight-semibold, 600);
-  transition: color 150ms ease, -webkit-text-decoration 150ms ease;
   transition: color 150ms ease, text-decoration 150ms ease;
-  transition: color 150ms ease, text-decoration 150ms ease, -webkit-text-decoration 150ms ease;
 }
 
 ul.list--default a:hover,
@@ -1921,10 +1918,6 @@ ul.list--default a:hover,
 
 .search-field {
   border-radius: var(--radius-pill);
-}
-
-.text-input::-moz-placeholder, .search-field::-moz-placeholder {
-  color: var(--color-text-muted);
 }
 
 .text-input::placeholder,
@@ -2408,8 +2401,7 @@ ul.list--default a:hover,
 .methodology__image img {
   width: 100%;
   height: 380px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -2451,7 +2443,6 @@ ul.list--default a:hover,
 }
 
 .team-card:hover {
-  transform: translateY(-4px);
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);
 }
@@ -2473,8 +2464,7 @@ ul.list--default a:hover,
 .team-card__photo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -2542,8 +2532,7 @@ ul.list--default a:hover,
   max-width: 100%;
   display: block;
   border-radius: var(--radius-md);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 /* ============================================================
@@ -2568,7 +2557,6 @@ ul.list--default a:hover,
   padding: 2.25rem 1.5rem;
   position: relative;
   opacity: 0;
-  transform: translateY(20px);
   transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hero-stats-bar .hero-stat-item:not(:last-child)::after {
@@ -2582,7 +2570,6 @@ ul.list--default a:hover,
 }
 .hero-stats-bar.is-visible .hero-stat-item {
   opacity: 1;
-  transform: translateY(0);
 }
 .hero-stats-bar.is-visible .hero-stat-item:nth-child(1) {
   transition-delay: 0.05s;
@@ -2597,7 +2584,6 @@ ul.list--default a:hover,
   transition-delay: 0.44s;
 }
 .hero-stats-bar.is-visible .hero-stat-item:hover {
-  transform: translateY(-3px);
   transition-delay: 0s;
   transition-duration: 200ms;
 }
@@ -2728,21 +2714,20 @@ ul.list--default a:hover,
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  transition: box-shadow 240ms ease, border-color 240ms ease;
 }
 .software-product-card:hover {
   box-shadow: 0 22px 45px -12px rgba(12, 36, 97, 0.16), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
   border-color: rgba(12, 36, 97, 0.25);
 }
 .software-product-card:hover .software-card-media-full img.media-screen {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 .software-product-card:hover .software-card-media-full img.media-phone-float {
-  transform: translateY(-4px) scale(1.03);
+  transform: scale(1.03);
 }
 .software-product-card:hover .software-card-btn {
   background: #18225c;
-  transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(12, 36, 97, 0.25);
 }
 .software-product-card .software-card-media-full {
@@ -2756,10 +2741,8 @@ ul.list--default a:hover,
 .software-product-card .software-card-media-full img.media-screen {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top center;
-     object-position: top center;
+  object-fit: cover;
+  object-position: top center;
   display: block;
   transition: transform 350ms ease;
 }
@@ -2769,8 +2752,7 @@ ul.list--default a:hover,
   bottom: -15px;
   height: 180px;
   width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: drop-shadow(0 12px 25px rgba(15, 23, 42, 0.35));
   transition: transform 300ms ease;
   z-index: 2;
@@ -2970,9 +2952,7 @@ ul.list--default a:hover,
   line-height: 1;
   color: rgba(42, 59, 153, 0.06);
   letter-spacing: -0.04em;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   pointer-events: none;
   z-index: 0;
 }
@@ -3133,8 +3113,7 @@ a.card,
 .card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 16px;
 }
@@ -3268,7 +3247,6 @@ a.card,
 }
 
 .luxury-card:hover {
-  transform: translateY(-6px);
   box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
   border-color: rgba(0, 86, 179, 0.25);
 }
@@ -3284,8 +3262,7 @@ a.card,
 .luxury-card-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3466,7 +3443,6 @@ a.card,
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 .contact-info-card:hover {
-  transform: translateY(-3px);
   border-color: rgba(42, 59, 153, 0.3);
 }
 
@@ -3593,9 +3569,6 @@ a.card,
   background-color: #fef2f2 !important;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
 }
-.form-group input::-moz-placeholder, .form-group select::-moz-placeholder, .form-group textarea::-moz-placeholder {
-  color: #94a3b8;
-}
 .form-group input::placeholder,
 .form-group select::placeholder,
 .form-group textarea::placeholder {
@@ -3626,7 +3599,6 @@ a.card,
 }
 .form-submit-btn:hover {
   background: var(--color-primary-dark, #182463);
-  transform: translateY(-1px);
 }
 .form-submit-btn:disabled {
   opacity: 0.7;
@@ -3694,7 +3666,6 @@ a.card,
 .solution-detail-card:hover .sol-card-btn {
   background: var(--color-primary);
   color: #ffffff;
-  transform: translateY(-2px);
 }
 .solution-detail-card .sol-card-media {
   position: relative;
@@ -3706,8 +3677,7 @@ a.card,
 .solution-detail-card .sol-card-media img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   transition: transform 400ms ease;
 }
@@ -3816,6 +3786,7 @@ a.card,
   justify-content: center;
   gap: 8px;
   width: 100%;
+  margin-top: auto;
   padding: 11px 20px;
   background: var(--color-primary-light, #edf2fe);
   color: var(--color-primary);
@@ -3828,7 +3799,6 @@ a.card,
 .solution-detail-card .sol-card-btn:hover {
   background: var(--color-primary);
   color: #ffffff;
-  transform: translateY(-2px);
 }
 
 .solution-detail-card .sol-subservices-list li:not(:has(i))::before {
@@ -4009,7 +3979,6 @@ a.card,
   position: absolute;
   left: 14px;
   top: 50%;
-  transform: translateY(-50%);
   color: var(--color-primary);
   pointer-events: none;
   display: flex;
@@ -4036,10 +4005,6 @@ a.card,
   box-shadow: 0 0 0 3px rgba(42, 59, 153, 0.15);
 }
 
-.table-toolbar__search-input::-moz-placeholder {
-  color: var(--color-text-muted, #9AA0AC);
-}
-
 .table-toolbar__search-input::placeholder {
   color: var(--color-text-muted, #9AA0AC);
 }
@@ -4063,8 +4028,7 @@ a.card,
   border-radius: var(--radius-md, 10px);
   outline: none;
   cursor: pointer;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   transition: border-color 0.2s ease;
 }
@@ -4411,4 +4375,6 @@ table.dataframe tbody td:last-child {
 [data-theme=dark] .cell-beneficiary,
 [data-theme=dark] .cell-scope {
   color: #cbd5e1;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
