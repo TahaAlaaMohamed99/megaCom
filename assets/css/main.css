@@ -3750,4 +3750,174 @@ table.dataframe tbody td:last-child {
   display: block;
   border-radius: var(--radius-md);
   object-fit: contain;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/* Solutions 3-Card Grid with Detailed Services Inside */
+.solutions-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 3.5rem;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .solutions-three-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .solutions-three-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.solution-detail-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.07), 0 2px 6px 0 rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.solution-detail-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(42, 59, 153, 0.15), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+  border-color: rgba(42, 59, 153, 0.25);
+}
+.solution-detail-card .sol-card-media {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+.solution-detail-card .sol-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+.solution-detail-card:hover .sol-card-media img {
+  transform: scale(1.05);
+}
+.solution-detail-card .sol-card-media .sol-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.35) 60%, transparent 100%);
+}
+.solution-detail-card .sol-card-media .sol-card-badge {
+  position: absolute;
+  top: 16px;
+  inset-inline-start: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border-radius: 99px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.solution-detail-card .sol-card-media .sol-card-header-title {
+  position: absolute;
+  bottom: 16px;
+  inset-inline-start: 18px;
+  inset-inline-end: 18px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.solution-detail-card .sol-card-media .sol-card-header-title i {
+  color: #93c5fd;
+}
+.solution-detail-card .sol-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.solution-detail-card .sol-card-desc {
+  color: var(--color-text-secondary);
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+}
+.solution-detail-card .sol-subservices-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin: 0 0 0.85rem 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.solution-detail-card .sol-subservices-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+.solution-detail-card .sol-subservices-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-text-primary);
+}
+.solution-detail-card .sol-subservices-list li i {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.solution-detail-card .sol-subservices-list li .sol-item-text strong {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  display: block;
+}
+.solution-detail-card .sol-subservices-list li .sol-item-text span {
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  display: block;
+  margin-top: 1px;
+}
+.solution-detail-card .sol-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 20px;
+  background: var(--color-primary-light, #edf2fe);
+  color: var(--color-primary);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+.solution-detail-card .sol-card-btn:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+/*# sourceMappingURL=main.css.map */
