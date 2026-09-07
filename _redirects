@@ -1,2 +1,7 @@
 # Netlify Proxy Rules to bypass CORS
 /mobile-api/*  https://www.megahrnext.com/mobile-api/:splat  200!
+
+# Software Services Migration Redirects
+/government/sw-services/megahr-enterprise/  /our-service/software/megahr-enterprise/  301
+/government/sw-services/egrp-v2-0/  /our-service/software/egrp-v2-0/  301
+/government/sw-services/*  /our-service/software/  301

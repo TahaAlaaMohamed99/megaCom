@@ -11,22 +11,18 @@ async function loadComponent(selector, path) {
   const element = document.querySelector(selector);
   if (!element) return false;
 
-  const cacheKey = `mc_comp_${path}`;
-  const cachedHTML = sessionStorage.getItem(cacheKey);
-
-  if (cachedHTML) {
-    element.innerHTML = cachedHTML;
-    return true;
-  }
+  // Clear stale cached components from sessionStorage to ensure latest navbar & footer
+  try {
+    Object.keys(sessionStorage).forEach((key) => {
+      if (key.startsWith("mc_comp_")) sessionStorage.removeItem(key);
+    });
+  } catch (e) {}
 
   try {
-    const response = await fetch(path);
+    const response = await fetch(`${path}?t=${Date.now()}`);
     if (!response.ok) throw new Error(`Failed to load ${path}`);
     const html = await response.text();
     element.innerHTML = html;
-    try {
-      sessionStorage.setItem(cacheKey, html);
-    } catch (e) {}
     return true;
   } catch (error) {
     console.error(`[MegaCom] Error loading component ${path}:`, error);
@@ -75,55 +71,73 @@ function initNavbar() {
   initHeaderScroll();
 
   // ------------------------------------------------------------
-  // 1. Highlight Current Active Route & Parent Ancestors
+  // 1. Highlight Current Active Route & Parent Ancestors (Best-match Specificity)
   // ------------------------------------------------------------
   function highlightActiveRoutes() {
     const rawPath = window.location.pathname.replace(/\/index\.html$/, "/") || "/";
     const currentPath = rawPath === "/" ? "/" : rawPath.replace(/\/$/, "");
-    const allLinks = navbar.querySelectorAll(".menu a");
+    const allLinks = Array.from(navbar.querySelectorAll(".menu a"));
 
     // Clear all stale active states first
     navbar.querySelectorAll(".menu-item, .menu a, .menu li").forEach((item) => {
       item.classList.remove("current-menu-item", "active", "current-menu-ancestor", "current-menu-parent");
     });
 
+    // On root home page, only activate Home link
+    if (currentPath === "/") {
+      const homeLink = navbar.querySelector('.nav-links > .menu-item a[href="/"]');
+      if (homeLink) {
+        homeLink.classList.add("current-menu-item", "active");
+        const topMenuItem = homeLink.closest(".nav-links > .menu-item");
+        if (topMenuItem) topMenuItem.classList.add("current-menu-item", "active");
+      }
+      return;
+    }
+
+    // Collect all matching route candidates
+    const candidates = [];
     allLinks.forEach((link) => {
       try {
         const linkUrl = new URL(link.href, window.location.origin);
+        if (linkUrl.origin !== window.location.origin) return; // Ignore external links
+
         const rawLinkPath = linkUrl.pathname.replace(/\/index\.html$/, "/") || "/";
         const linkPath = rawLinkPath === "/" ? "/" : rawLinkPath.replace(/\/$/, "");
 
-        // On root home page, only activate Home link
-        if (currentPath === "/") {
-          if (linkPath === "/") {
-            const topMenuItem = link.closest(".nav-links > .menu-item");
-            if (topMenuItem) {
-              topMenuItem.classList.add("current-menu-item", "active");
-            }
-          }
-          return;
-        }
+        if (linkPath === "/") return;
 
-        // On inner pages, match exact route or child path
-        const isMatch = linkPath !== "/" && (currentPath === linkPath || currentPath.startsWith(linkPath + "/"));
-
-        if (isMatch) {
-          link.classList.add("current-menu-item", "active");
-          const parentLi = link.closest("li");
-          if (parentLi) {
-            parentLi.classList.add("current-menu-item", "active");
-          }
-
-          // Mark top-level navbar parent menu item as active ancestor
-          const topMenuItem = link.closest(".nav-links > .menu-item");
-          if (topMenuItem) {
-            topMenuItem.classList.add("current-menu-ancestor", "current-menu-parent", "active");
-          }
+        if (currentPath === linkPath) {
+          // Exact match gets highest priority
+          candidates.push({ link, linkPath, score: 10000 + linkPath.length });
+        } else if (currentPath.startsWith(linkPath + "/")) {
+          // Prefix match scored by path length (longest/most specific wins)
+          candidates.push({ link, linkPath, score: linkPath.length });
         }
       } catch (e) {
         // External link or invalid url
       }
     });
+
+    if (candidates.length === 0) return;
+
+    // Sort descending: exact matches first, then longest matching path
+    candidates.sort((a, b) => b.score - a.score);
+
+    const bestCandidate = candidates[0];
+    const winningTopMenuItem = bestCandidate.link.closest(".nav-links > .menu-item");
+
+    if (winningTopMenuItem) {
+      winningTopMenuItem.classList.add("current-menu-item", "current-menu-ancestor", "active");
+      const topLink = winningTopMenuItem.querySelector(":scope > a, :scope > .menu-item-row > a");
+      if (topLink) topLink.classList.add("current-menu-item", "active");
+    }
+
+    // Also mark the specific child link and its parent li inside the winning menu
+    bestCandidate.link.classList.add("current-menu-item", "active");
+    const parentLi = bestCandidate.link.closest("li");
+    if (parentLi && parentLi !== winningTopMenuItem) {
+      parentLi.classList.add("current-menu-item", "active");
+    }
   }
 
   // ------------------------------------------------------------
