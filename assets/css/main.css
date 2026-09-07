@@ -3780,12 +3780,20 @@ table.dataframe tbody td:last-child {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 .solution-detail-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px -12px rgba(42, 59, 153, 0.15), 0 4px 12px 0 rgba(0, 0, 0, 0.04);
   border-color: rgba(42, 59, 153, 0.25);
+}
+.solution-detail-card:hover .sol-card-btn {
+  background: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 .solution-detail-card .sol-card-media {
   position: relative;
