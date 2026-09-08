@@ -1799,7 +1799,9 @@ ul.list--default a,
   color: var(--color-primary, #0056b3);
   text-decoration: none;
   font-weight: var(--font-weight-semibold, 600);
+  transition: color 150ms ease, -webkit-text-decoration 150ms ease;
   transition: color 150ms ease, text-decoration 150ms ease;
+  transition: color 150ms ease, text-decoration 150ms ease, -webkit-text-decoration 150ms ease;
 }
 
 ul.list--default a:hover,
@@ -1918,6 +1920,10 @@ ul.list--default a:hover,
 
 .search-field {
   border-radius: var(--radius-pill);
+}
+
+.text-input::-moz-placeholder, .search-field::-moz-placeholder {
+  color: var(--color-text-muted);
 }
 
 .text-input::placeholder,
@@ -2401,7 +2407,8 @@ ul.list--default a:hover,
 .methodology__image img {
   width: 100%;
   height: 380px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 
@@ -2464,7 +2471,8 @@ ul.list--default a:hover,
 .team-card__photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 
@@ -2532,7 +2540,8 @@ ul.list--default a:hover,
   max-width: 100%;
   display: block;
   border-radius: var(--radius-md);
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /* ============================================================
@@ -2741,8 +2750,10 @@ ul.list--default a:hover,
 .software-product-card .software-card-media-full img.media-screen {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
   display: block;
   transition: transform 350ms ease;
 }
@@ -2752,7 +2763,8 @@ ul.list--default a:hover,
   bottom: -15px;
   height: 180px;
   width: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   filter: drop-shadow(0 12px 25px rgba(15, 23, 42, 0.35));
   transition: transform 300ms ease;
   z-index: 2;
@@ -2900,7 +2912,8 @@ ul.list--default a:hover,
 .home-who-section .home-who-media .home-who-img-wrap img {
   width: 100%;
   height: 480px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 400ms ease;
 }
@@ -3190,6 +3203,380 @@ ul.list--default a:hover,
     padding: 1.5rem 1.25rem;
   }
 }
+/* ============================================================
+   MegaHR Enterprise Dedicated Product Styles
+============================================================ */
+.megahr-hero {
+  padding: 2.5rem 0 4rem 0;
+  position: relative;
+}
+.megahr-hero .megahr-hero-grid {
+  display: grid;
+  align-items: center;
+}
+.megahr-hero .megahr-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.megahr-hero .megahr-hero-badge svg {
+  color: var(--color-primary);
+}
+.megahr-hero .megahr-hero-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.02em;
+}
+.megahr-hero .megahr-hero-title .megahr-title-gradient {
+  background: linear-gradient(#18225c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.megahr-hero .megahr-hero-lead {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin: 0 0 1.75rem 0;
+}
+.megahr-hero .megahr-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+.megahr-hero .megahr-hero-tags .megahr-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+.megahr-hero .megahr-hero-tags .megahr-tag svg {
+  color: #0284c7;
+}
+.megahr-hero .megahr-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.megahr-hero .megahr-hero-actions .megahr-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #18225c;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 220ms ease;
+}
+.megahr-hero .megahr-hero-actions .megahr-btn-primary:hover {
+  background: #233183;
+  color: #ffffff;
+}
+.megahr-hero .megahr-hero-actions .megahr-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  transition: all 220ms ease;
+}
+.megahr-hero .megahr-hero-actions .megahr-btn-secondary:hover {
+  background: var(--color-background);
+  border-color: #94a3b8;
+}
+.megahr-hero .megahr-hero-visual {
+  position: relative;
+}
+.megahr-hero .megahr-hero-visual .megahr-screen-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.megahr-hero .megahr-hero-visual .megahr-screen-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 400ms ease;
+}
+.megahr-hero .megahr-hero-visual .megahr-screen-wrap:hover img {
+  transform: scale(1.02);
+}
+.megahr-hero .megahr-hero-visual .megahr-floating-stat {
+  position: absolute;
+  bottom: -15px;
+  inset-inline-start: -15px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow: 0 15px 30px -8px rgba(15, 23, 42, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+.megahr-hero .megahr-hero-visual .megahr-floating-stat .stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.megahr-hero .megahr-hero-visual .megahr-floating-stat .stat-text {
+  display: flex;
+  flex-direction: column;
+}
+.megahr-hero .megahr-hero-visual .megahr-floating-stat .stat-text .stat-num {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+.megahr-hero .megahr-hero-visual .megahr-floating-stat .stat-text .stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* Inception Design Pillars Grid (Verbatim 4 points) */
+.megahr-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+.megahr-pillars-grid .megahr-pillar-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.85rem 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: all 250ms ease;
+  box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.04);
+}
+.megahr-pillars-grid .megahr-pillar-card .pillar-number {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #94a3b8;
+  line-height: 1;
+  min-width: 36px;
+  transition: color 200ms ease;
+}
+.megahr-pillars-grid .megahr-pillar-card .pillar-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Core System Modules Grid (Verbatim 8 Modules) */
+.megahr-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+.megahr-modules-grid .megahr-module-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.35rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 250ms ease;
+  box-shadow: 0 4px 12px -3px rgba(15, 23, 42, 0.04);
+}
+.megahr-modules-grid .module-icon-wrap {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms ease;
+}
+.megahr-modules-grid .module-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Other Features Grid (Verbatim 10 Features) */
+.megahr-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+.megahr-features-grid .megahr-feature-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  transition: all 220ms ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+.megahr-features-grid .megahr-feature-card .feature-icon {
+  min-width: 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+}
+.megahr-features-grid .megahr-feature-card .feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Responsive Queries */
+@media (max-width: 1100px) {
+  .megahr-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 860px) {
+  .megahr-hero .megahr-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .megahr-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .megahr-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .megahr-hero .megahr-hero-visual .megahr-floating-stat {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .megahr-modules-grid {
+    grid-template-columns: 1fr;
+  }
+  .megahr-hero {
+    padding: 1.5rem 0 3rem 0;
+  }
+}
+/* Dark Mode Overrides */
+[data-theme=dark] .megahr-hero .megahr-hero-title .megahr-title-gradient {
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-theme=dark] .megahr-hero .megahr-hero-badge {
+  background: rgba(37, 99, 235, 0.2);
+  color: #93c5fd;
+}
+[data-theme=dark] .megahr-hero .megahr-hero-actions .megahr-btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+[data-theme=dark] .megahr-hero .megahr-hero-actions .megahr-btn-primary:hover {
+  background: #3b82f6;
+}
+[data-theme=dark] .megahr-hero .megahr-hero-actions .megahr-btn-secondary:hover {
+  background: #182463;
+}
+[data-theme=dark] .megahr-hero .megahr-hero-visual .megahr-floating-stat {
+  background: rgba(17, 26, 69, 0.95);
+}
+[data-theme=dark] .megahr-hero .megahr-hero-visual .megahr-floating-stat .stat-icon {
+  background: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+}
+[data-theme=dark] .megahr-pillars-grid .megahr-pillar-card {
+  background: #111a45;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme=dark] .megahr-pillars-grid .megahr-pillar-card .pillar-number {
+  color: #475569;
+}
+[data-theme=dark] .megahr-modules-grid .megahr-module-card {
+  background: #111a45;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme=dark] .megahr-modules-grid .megahr-module-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+[data-theme=dark] .megahr-modules-grid .megahr-module-card:hover .module-icon-wrap {
+  background: #2563eb;
+  color: #ffffff;
+}
+[data-theme=dark] .megahr-modules-grid .megahr-module-card .module-icon-wrap {
+  background: #182463;
+  color: #93c5fd;
+}
+[data-theme=dark] .megahr-features-grid .megahr-feature-card {
+  background: #111a45;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme=dark] .megahr-features-grid .megahr-feature-card:hover {
+  border-color: #60a5fa;
+}
+[data-theme=dark] .megahr-features-grid .megahr-feature-card:hover .feature-icon {
+  background: #2563eb;
+  color: #ffffff;
+}
+[data-theme=dark] .megahr-features-grid .megahr-feature-card .feature-icon {
+  background: #182463;
+  color: #93c5fd;
+}
+
 .services-section {
   padding-block: var(--space-xxxl);
   background: var(--color-background);
@@ -3268,7 +3655,9 @@ ul.list--default a:hover,
   line-height: 1;
   color: rgba(42, 59, 153, 0.06);
   letter-spacing: -0.04em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   pointer-events: none;
   z-index: 0;
 }
@@ -3429,7 +3818,8 @@ a.card,
 .card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-radius: 16px;
 }
@@ -3578,7 +3968,8 @@ a.card,
 .luxury-card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3885,6 +4276,9 @@ a.card,
   background-color: #fef2f2 !important;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
 }
+.form-group input::-moz-placeholder, .form-group select::-moz-placeholder, .form-group textarea::-moz-placeholder {
+  color: #94a3b8;
+}
 .form-group input::placeholder,
 .form-group select::placeholder,
 .form-group textarea::placeholder {
@@ -3993,7 +4387,8 @@ a.card,
 .solution-detail-card .sol-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 400ms ease;
 }
@@ -4321,6 +4716,10 @@ a.card,
   box-shadow: 0 0 0 3px rgba(42, 59, 153, 0.15);
 }
 
+.table-toolbar__search-input::-moz-placeholder {
+  color: var(--color-text-muted, #9AA0AC);
+}
+
 .table-toolbar__search-input::placeholder {
   color: var(--color-text-muted, #9AA0AC);
 }
@@ -4344,7 +4743,8 @@ a.card,
   border-radius: var(--radius-md, 10px);
   outline: none;
   cursor: pointer;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   -webkit-appearance: none;
   transition: border-color 0.2s ease;
 }
@@ -4691,6 +5091,4 @@ table.dataframe tbody td:last-child {
 [data-theme=dark] .cell-beneficiary,
 [data-theme=dark] .cell-scope {
   color: #cbd5e1;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
