@@ -1252,6 +1252,7 @@ body.nav-scroll-locked {
 .hero-slide-content {
   max-width: 720px;
   padding-block: 20vh;
+  padding-inline: var(--space-lg);
 }
 
 .hero-slide-title {
@@ -1330,13 +1331,13 @@ body.nav-scroll-locked {
   font-size: 16px !important;
   font-weight: 700;
 }
-.hero-slider-arrow svg {
-  flex-shrink: 0;
-  pointer-events: none;
-}
 .hero-slider-arrow:hover {
   background: rgba(255, 255, 255, 0.22);
   transform: translateY(-50%) scale(1.08);
+}
+.hero-slider-arrow svg {
+  flex-shrink: 0;
+  pointer-events: none;
 }
 
 .hero-slider-prev {
@@ -1381,7 +1382,8 @@ body.nav-scroll-locked {
     width: calc(100% - var(--space-md) * 2);
   }
   .hero-slide-content {
-    padding: 35px 0 35px;
+    padding-block: 25px;
+    padding-inline: 0;
     margin-inline: auto;
     display: flex;
     height: 85vh;

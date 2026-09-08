@@ -1476,6 +1476,7 @@ body.nav-scroll-locked {
 .hero-slide-content {
   max-width: 720px;
   padding-block: 20vh;
+  padding-inline: var(--space-lg);
 }
 
 
@@ -1697,7 +1698,8 @@ body.nav-scroll-locked {
   }
 
   .hero-slide-content {
-    padding: 35px 0 35px;
+    padding-block: 25px;
+    padding-inline: 0;
     margin-inline: auto;
     display: flex;
     height: 85vh;
