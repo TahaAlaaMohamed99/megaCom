@@ -3094,11 +3094,6 @@ ul.list--default a:hover,
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
   position: relative;
 }
-.home-why-section .why-cards-grid .why-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px -8px rgba(24, 36, 99, 0.1);
-  border-color: var(--color-primary);
-}
 .home-why-section .why-cards-grid .why-card .why-card-num {
   font-size: 1.15rem;
   font-weight: 800;
