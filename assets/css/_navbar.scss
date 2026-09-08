@@ -1574,6 +1574,16 @@ body.nav-scroll-locked {
 // ============================================================
 
 .hero-slider-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 46px !important;
   height: 46px !important;
 
@@ -1582,10 +1592,13 @@ body.nav-scroll-locked {
   background: rgba(255, 255, 255, 0.08);
 
   border: 1px solid rgba(255, 255, 255, 0.15);
-
   border-radius: 50%;
 
+  cursor: pointer;
+
   backdrop-filter: blur(10px);
+
+  transform: translateY(-50%);
 
   transition:
     background-color 160ms ease,
@@ -1597,9 +1610,14 @@ body.nav-scroll-locked {
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.22);
 
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  svg {
+    flex-shrink: 0;
+    pointer-events: none;
   }
 }
 
